@@ -1,0 +1,12 @@
+#container{
+	width: 800px;
+	height: 600px;
+	border: 1px dotted #000;
+	margin: 0 auto;
+}
+
+#cam_frame{
+	background: url('../img/camara_01.png') no-repeat;
+	width: 800px;
+	height: 600px;
+}
