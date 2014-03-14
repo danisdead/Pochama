@@ -39,13 +39,18 @@
 
 <script>
 	$(document).ready(function(){
-		$( "#takeSnapshot" ).click(function() {
+		$("#flash").css('visibility', 'hidden');
+		$('.container').on('click', '#takeSnapshot', function() { 
 			$("#flash").fadeIn(500);
 			$("#flash").css('visibility', 'visible');
-			$("#flash").fadeOut(500);
-			console.log("Holi");
-		});
+			$("#flash").fadeOut(500, function(){
+				$("#flash").css('display', 'block');
+				$("#flash").css('visibility', 'hidden');
+			});
+		})
 	})
+		/*)}
+	})*/
 </script>
 </head>
 <body>
