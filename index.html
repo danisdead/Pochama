@@ -38,9 +38,14 @@
 </style>
 
 <script>
-	$( "#retake" ).click(function() {
-		console.log("Holi");
-	});
+	$(document).ready(function(){
+		$( "#takeSnapshot" ).click(function() {
+			$("#flash").fadeIn(500);
+			$("#flash").css('visibility', 'visible');
+			$("#flash").fadeOut(500);
+			console.log("Holi");
+		});
+	})
 </script>
 </head>
 <body>
