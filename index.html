@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>getUserMedia() shim demo</title>
+	<meta name="author" content="Addy Osmani"/>
+	<!--[if IE]><script src="getUserMedia/cam/js/ie.js"></script><![endif]-->
+	<script src="js/jquery-2.0.0.min.js"></script>
+<style>
+#wrap{
+	margin: 0 auto;
+	width: 370px;
+}
+	#canvas, #output{
+		visibility:hidden;
+	}
+	#canvas, #output, #webcam{
+		margin: 0 auto;
+	}
+	#control{
+		position: relative;
+		top:-550px;
+		margin: 0 auto;
+		width: 288px;
+	}
+	#canvas{
+		height:240px;
+		position: relative;
+		top: -300px;
+		left: 25px;
+		border: none;
+		border-radius: 0px;
+	}
+	/*#flash{
+		background: url("img/flash.png");
+		z-index: 100;
+	}*/
+		
+</style>
+
+<script>
+	$( "#retake" ).click(function() {
+		console.log("Holi");
+	});
+</script>
+</head>
+<body>
+<script src="facedet2/ccv.js"></script>
+<link rel="stylesheet" href="getUserMedia/cam/css/bootstrap.min.css">
+<link rel="stylesheet" href="getUserMedia/cam/css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="getUserMedia/cam/css/demo.css">
+
+<div class="container">
+
+	<section>
+		<div id="wrap">
+				<div id="webcam">
+		      </div>
+		     
+		    <canvas id="canvas"  height="240" width="320"></canvas>	    
+		    <canvas id="output"  height="426" width="515"></canvas>
+		    <div id="flash"></div>
+			<div id="control">
+		 	<select id="img_select" >
+			  <option value="img/glasses_original.png">Lentes 1</option>
+			  <option value="img/glasses2.png">Lentes 2</option>
+			  <option value="img/mono.png">Mo&ntilde;o</option>
+			  <option value="img/ojos.png">Ojos</option>
+			</select>
+		    <div class="row">
+		    	<p id="errorMessage"></p>
+		    </div>
+		    
+		    	 <div class="row">
+			    <div class="span4">&nbsp;</div>
+			    <div class="span4"><button class="btn btn-primary btn-large" id="takeSnapshot">1. Take a picture</button>
+			    &nbsp;
+			    <!--<button class="btn btn-primary btn-large" id="detectFaces">Retake</button></div>-->
+			    <button class="btn btn-primary btn-large" id="retake">Retake</button>
+			    <div class="span4">&nbsp;</div>
+	  		</div>
+		    </div>
+
+	  	</div>
+
+	</section>
+	<footer>This shim &copy; <a href="http://addyosmani.com">Addy Osmani</a> 2012.</footer>
+</div>
+
+<!--[if IE]><script src="getUserMedia/cam/js/excanvas.js"></script><![endif]-->
+<script type="text/javascript" src="getUserMedia/lib/getUserMedia.js"></script>
+<script type="text/javascript" src="getUserMedia/cam/js/glasses/ccv.js"></script>
+<script type="text/javascript" src="getUserMedia/cam/js/glasses/face.js"></script>
+<script type="text/javascript" src="getUserMedia/cam/js/glasses/stackblur.js"></script>
+<script type="text/javascript" src="getUserMedia/cam/js/demo.js"></script>
+
+</body>
+</html>
