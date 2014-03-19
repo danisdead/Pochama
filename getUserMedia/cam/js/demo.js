@@ -10,6 +10,7 @@
 	var App = {
 
 		init: function () {
+			App.drawToVideo();
 
 			// The shim requires options to be supplied for it's configuration,
 			// which can be found lower down in this file. Most of the below are
@@ -45,6 +46,7 @@
 					App.drawToCanvas('glasses');
 				});
 
+
 			} else {
 				alert('No options were supplied to the shim!');
 			}
@@ -52,10 +54,7 @@
 
 		addEvent: function (type, obj, fn) {
 			if (obj.attachEvent) {
-				ob
-
-
-				j['e' + type + fn] = fn;
+				obj['e' + type + fn] = fn;
 				obj[type + fn] = function () {
 					obj['e' + type + fn](window.event);
 				}
@@ -191,7 +190,8 @@
 		retakePhoto: function () {
 			document.getElementById("canvas").style.visibility="hidden";
 		},
-		//hacer otra funcion aqui que sobreescriba a la de dos.html
+		drawToVideo: function (effect) {
+		},
 		drawToCanvas: function (effect) {
 			var source, glasses, canvas, ctx, pixels, i;
 
