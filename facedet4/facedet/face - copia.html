@@ -3,7 +3,6 @@
 <!-- Adapted to work with the getUserMedia API using code from http://wesbos.com/html5-video-face-detection-canvas-javascript/ -->
 	<head>
 		<meta charset="utf-8">
-		<!--[if IE]><script src="../getUserMedia/cam/js/ie.js"></script><![endif]-->
 		<title>HTML5 Face Detection - JavaScript getUserMedia API and Groucho Marx glasses!</title>
 		<style>
 body {
@@ -41,10 +40,9 @@ session_start();
 		<canvas id="output"></canvas>
 		<script src="ccv.js"></script>
 		<script src="face.js"></script>
-		<script>
+<script>
 
-// requestAnimationFrame shim
-//AGREGAR ESTO AL INDEX.HTML
+// requestAnimationFrame shim 
 (function() {
 	var i = 0,
 		lastTime = 0,
@@ -135,6 +133,7 @@ var App = {
 		
 		for (i = App.comp.length; i--; ) {
 			ctx.drawImage(App.glasses, (App.comp[i].x - w / 2) * m, (App.comp[i].y - w / 2) * m, (App.comp[i].width + w) * m, (App.comp[i].height + w) * m);
+			//console.log(App.comp[i].x);
 		}
 	}
 };

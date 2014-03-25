@@ -6,10 +6,10 @@
 	<!--[if IE]><script src="getUserMedia/cam/js/ie.js"></script><![endif]-->
 	<script src="js/jquery-2.0.0.min.js"></script>
 <style>
-#wrap{
-	margin: 0 auto;
-	width: 370px;
-}
+	#wrap{
+		margin: 0 auto;
+		width: 370px;
+	}
 	#canvas, #output{
 		visibility:hidden;
 	}
@@ -30,13 +30,6 @@
 		border: none;
 		border-radius: 0px;
 	}
-	/*#flash{
-		background: url("img/flash.png");
-		z-index: 100;
-	}*/
-/*
-El video a un canvas, no a un div
-*/
 </style>
 <script>
 	$(document).ready(function(){
@@ -55,7 +48,7 @@ El video a un canvas, no a un div
 </script>
 </head>
 <body>
-<script src="facedet2/ccv.js"></script>
+<!--<script src="facedet2/ccv.js"></script>-->
 <link rel="stylesheet" href="getUserMedia/cam/css/bootstrap.min.css">
 <link rel="stylesheet" href="getUserMedia/cam/css/bootstrap-responsive.min.css">
 <link rel="stylesheet" href="getUserMedia/cam/css/demo.css">
@@ -63,16 +56,17 @@ El video a un canvas, no a un div
 <div class="container">
 	<section>
 		<div id="wrap">
-			<div id="webcam"></div>
+			<div id="webcam">
+				<img id="imagen" src="img/glasses2.png"/>
+			</div>
+			<script src="facedet2/ccv.js"></script>
+			<script src="facedet2/face.js"></script>
+			<script>
+				/*document.getElementById("imagen").style.top = "100px";
+				document.getElementById("imagen").style.width = "150px";*/
+			</script>
 		    <canvas id="canvas"  height="240" width="320"></canvas>	    
 		    <canvas id="output"  height="426" width="515"></canvas>
-		    <img id="scream" src="img/ojos.png" style=" width: 247px; height: 144px;"></img>
-		    <script>
-				var c=document.getElementById("output");
-				var ctx=c.getContext("2d");
-				var img=document.getElementById("scream");
-				ctx.drawImage(img,10,10);
-			</script>
 		    <div id="flash"></div>
 			<div id="control">
 		 	<select id="img_select" >

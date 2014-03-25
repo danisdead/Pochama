@@ -8,16 +8,13 @@
 	'use strict';
 
 	var App = {
-
 		init: function () {
-			App.drawToVideo();
-
 			// The shim requires options to be supplied for it's configuration,
 			// which can be found lower down in this file. Most of the below are
 			// demo specific and should be used for reference within this context
 			// only
+			
 			if ( !!this.options ) {
-
 				this.pos = 0;
 				this.cam = null;
 				this.filter_on = false;
@@ -120,7 +117,7 @@
 		},
 
 		success: function (stream) {
-
+			//App.drawToVideo();
 			if (App.options.context === 'webrtc') {
 
 				var video = App.options.videoEl;
@@ -190,10 +187,59 @@
 		retakePhoto: function () {
 			document.getElementById("canvas").style.visibility="hidden";
 		},
-		drawToVideo: function (effect) {
+		drawToVideo: function () {
+			requestAnimationFrame(App.drawToVideo);
+
+			var source, glasses, canvas, ctx, pixels, i;
+			//document.getElementById("imagen").style.width = "150px";
+			var effect = "glasses";
+
+			//source = document.querySelector('#canvas');
+			glasses = new Image();
+			glasses.src = document.getElementById("img_select").value;
+			//glassses.src = "img/glasses2.png";
+			canvas = document.querySelector("#canvas");
+			//ctx = canvas.getContext("2d");
+
+			//ctx.drawImage(source, 0, 0, 640, 500);
+
+			//pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+			if (effect === 'glasses') {
+
+				var comp = ccv.detect_objects({
+					"canvas": (canvas), 
+					"cascade": cascade,
+					"interval": 5,
+					"min_neighbors": 1
+				});
+
+				// Draw glasses on everyone!
+				//la webcam debe estar en un canvas para que funcione
+				if (comp.length == 0){
+					console.log("NO");
+				} else {
+					console.log(comp.lenght);
+					for (i = 0; i < comp.length; i++) {
+						//ctx.drawImage(glasses, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
+						//document.getElementById("imagen").style.width = "150px";
+						//document.getElementById("imagen").style.width = comp[i].width;
+						console.log(comp[i].width);
+						//document.getElementById("imagen").style.height = comp[i].height;
+						//var pos_x = event.offsetX?(event.offsetX):event.pageX-document.getElementById("imagen").offsetLeft;
+					    //var pos_y = event.offsetY?(event.offsetY):event.pageY-document.getElementById("imagen").offsetTop;
+					    //document.getElementById("imagen").style.left = (pos_x-1) ;
+					    //document.getElementById("imagen").style.top = (pos_y-15) ;
+					} 
+				}
+
+
+				
+			}
 		},
 		drawToCanvas: function (effect) {
 			var source, glasses, canvas, ctx, pixels, i;
+			//document.getElementById("imagen").style.width = "150px";
 
 			source = document.querySelector('#canvas');
 			glasses = new Image();

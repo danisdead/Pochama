@@ -179,7 +179,6 @@ var ccv = {
 			this.shared.cascade = params.cascade;
 			this.shared.scale = Math.pow(2, 1 / (params.interval + 1));
 			this.shared.next = params.interval + 1;
-			//this.shared.scale_upto = Math.floor(Math.log(Math.min(params.canvas.width / params.cascade.width, params.canvas.height / params.cascade.height)) / Math.log(this.shared.scale));
 			this.shared.scale_upto = Math.floor(Math.log(Math.min(params.canvas.width / params.cascade.width, params.canvas.height / params.cascade.height)) / Math.log(this.shared.scale));
 			var i;
 			for (i = 0; i < this.shared.cascade.stage_classifier.length; i++)
