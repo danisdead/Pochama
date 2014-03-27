@@ -16,6 +16,7 @@ function cambiarImagen(numImg){
             break;
     }
     document.getElementById("elegida").innerHTML = ruta;
+    window.cancelAnimationFrame(drawToCanvas);
     drawToCanvas();              
 }
 
