@@ -46,7 +46,7 @@ function drawToCanvas(){
     var m = 4;
     var w = 4;
     if (comp.length == 0){
-        //ctx.drawImage(img, 100, 40, 150, 150); //IE
+        ctx.drawImage(img, 100, 40, 150, 150);
     } else {
         for (i = comp.length; i--; ) {
             ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);

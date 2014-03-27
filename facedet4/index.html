@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script type="text/javascript" src="js/jquery-2.0.0.min.js" ></script>
-    <script type="text/javascript" src="js/function.js" ></script>
+    
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
     <script type="text/javascript" src="CamShim.js"></script>
     <script type="text/javascript" src="calibrate.js"></script>
@@ -13,6 +13,14 @@
     <script type="text/javascript" src="keypad.js" ></script>
     <script type="text/javascript" src="sylvester.js" ></script>
     <script type="text/javascript" src="js/cam.js" ></script>
+
+    <!--[if IE]>
+        <script type="text/javascript" src="js/function_ie.js" ></script>
+    <![endif]-->
+
+    <!--[if !IE]><!-->
+        <script type="text/javascript" src="js/function.js" ></script>
+    <!--<![endif]-->
     <script>
     $(document).ready(function(){
         $("#flash").css('visibility', 'hidden');

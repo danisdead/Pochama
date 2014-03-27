@@ -9,7 +9,9 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
     color:transparent;
 }
 .boton:hover{
-    border:2px solid #98bf21;
+    -webkit-box-shadow: 0px 0px 24px 0px rgba(198, 50, 255, 1);
+    -moz-box-shadow:    0px 0px 24px 0px rgba(198, 50, 255, 1);
+    box-shadow:         0px 0px 24px 0px rgba(198, 50, 255, 1);
 }
 #flash {
     position:absolute;
@@ -36,4 +38,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 #controles{
     position:relative;
     top: -480px;
+}
+#elegida{
+    color:transparent;
 }
