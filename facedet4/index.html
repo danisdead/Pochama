@@ -1,58 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Takis</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script type="text/javascript" src="js/jquery-2.0.0.min.js" ></script>
+    <script type="text/javascript" src="js/function.js" ></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
     <script type="text/javascript" src="CamShim.js"></script>
     <script type="text/javascript" src="calibrate.js"></script>
     <script type="text/javascript" src="common_utils.js" ></script>
     <script type="text/javascript" src="keypad.js" ></script>
     <script type="text/javascript" src="sylvester.js" ></script>
-
-    <style>
-    .boton{
-        border:2px solid transparent;
-        height:80px;
-        width:80px;
-        background-repeat: no-repeat;
-        color:transparent;
-    }
-    .boton:hover{
-        border:2px solid #98bf21;
-    }
-    #flash {
-        position:absolute;
-        top:0px;
-        left:0px;
-        z-index:5000;
-        width:100%;
-        height:500px;
-        background-color:#FFFFFF;
-    }
-    #canvas{
-        position: relative;
-        top: -245px;
-        visibility: hidden;
-    }
-    #output{
-        position: relative;
-        top: -493px;
-        visibility: hidden;
-    }
-    .container{
-        width:400px;
-    }
-    #controles{
-        position:relative;
-        top: -480px;
-    }
-    </style>
+    <script type="text/javascript" src="js/cam.js" ></script>
     <script>
     $(document).ready(function(){
         $("#flash").css('visibility', 'hidden');
         $('.container').on('click', '#takeSnapshot', function() { 
-            console.log("hola");
             $("#flash").fadeIn(500);
             $("#flash").css('visibility', 'visible');
             $("#flash").fadeOut(500, function(){
@@ -62,92 +26,6 @@
         })
     })
     </script>
-    <script language="javascript">
-        var frameCount = 0;
-        var fpsCalcTimeSecs = 5;
-        
-        var width = 320;/*80; 373*/
-        var height = 240;/*60; 243*/
-    
-        var img = new Image();
-        var config;
-        var calibratedColorRange;
-
-        function showFrameCallback(encodedImage) {
-            //document.getElementById('displayImg').src="data:image/jpg;base64," + encodedImage;
-            img.src = "data:image/jpg;base64," + encodedImage;
-            frameCount++;
-        }
-        
-        function camStatus(status) {
-            if (status == "ENABLED") {
-                document.getElementById('camera').style.width = width + "px";
-                document.getElementById('camera').style.height = height + "px";
-                //mostrar #elcanvas de la camara
-                document.getElementById('canvas').style.visibility = "visible";
-            } else {
-                alert("You need to give this page camera access.");
-            }
-        }
-        
-        function camInfo(messageLevel, message) {
-            switch(messageLevel) {
-                case "ERROR": alert(message); break;
-                case "MESSAGE":  break; // need to do something useful here
-                case "DEBUG":  document.forms["form1"].output.value += "DEBUG: " + message + "\n"; break;
-            }
-         }
-         
-         function onMotionDetected(movementOccuring) {
-            /*
-            if (movementOccuring) {
-                camInfo("DEBUG", "movement occuring");
-            } else {
-                camInfo("DEBUG", "movement stopped");
-            }
-            */
-         }
-         
-         function calcFramerate() {
-            var fps = (frameCount/fpsCalcTimeSecs);
-            frameCount = 0;
-            //camInfo("DEBUG","fps = " + fps);
-            //document.getElementById('fps').value = fps;
-         }
-
-        function displayCam() {
-            // setup options
-            var camOptions = new CamOptions();
-            camOptions.resolutionX = width;
-            camOptions.resolutionY = height;
-            camOptions.framesPerSecond = 100;
-            camOptions.displayVideo = "true";
-            camOptions.camStatusCallbackFunction = "camStatus";
-            camOptions.messageCallbackFunction = "camInfo";
-            camOptions.motionDetectionCallbackFunction = "onMotionDetected";
-            camOptions.mirrorVideo = "true";
-            
-            var camShim = new CamShim("camera", "showFrameCallback", camOptions); // create the flash camera interface
-            
-            // run this to measure framerate
-            setInterval(calcFramerate, (fpsCalcTimeSecs * 1000));
-            
-            //config = new Config(document.getElementById('displayImg'), document.getElementById('canvas'));
-            config = new Config(img, document.getElementById('canvas'));
-        }
-
-        function calibrate() {
-            calibratedColorRange = config.sensedColorRange();
-            config.close();
-
-            document.getElementById('calibrateBtn').style.display = 'none';
-
-            var keypad = new Keypad(img, document.getElementById('canvas'), calibratedColorRange);
-            keypad.enable();
-        }        
-    </script>
-    
-    <title>CamShim</title>
 </head>
 <body onload="displayCam()">
     <div class="container">
@@ -159,78 +37,6 @@
         <script src="facedet/face.js"></script>
         <!--<img id="scream" src="facedet/glasses2.png" alt="The Scream" width="120">-->
         <script>
-            function cambiarImagen(numImg){
-                var imagen = numImg;
-                var ruta;
-                switch(imagen){
-                    case '1':
-                        ruta = "facedet/glasses_original.png";
-                        break;
-                    case '2':
-                        ruta = "facedet/glasses2.png";
-                        break;
-                    case '3':
-                        ruta = "facedet/mono.png";
-                        break;
-                    case '4':
-                        ruta = "facedet/ojos.png";
-                        break;
-
-                }
-                document.getElementById("elegida").innerHTML = ruta;                
-            }
-
-            function drawToCanvas(){
-                window.requestAnimationFrame(drawToCanvas);
-                var c=document.getElementById("canvas");
-                var ctx=c.getContext("2d");
-
-                var comp = ccv.detect_objects({
-                    canvas: c,
-                    cascade: cascade,
-                    interval: 1, 
-                    min_neighbors: 1
-                });
-
-                //var img=document.getElementById("scream");
-                var img = new Image();
-                var rutaImgn = document.getElementById("elegida").innerHTML;
-                if (rutaImgn == "Elige una imagen"){
-                    img.src = "facedet/glasses_original.png";
-                } else {
-                    img.src = document.getElementById("elegida").innerHTML;
-                }
-                
-                var w = 300 / 4 * 0.8;
-                var h = 270 / 4 * 0.8;
-                var m = 4;
-                var w = 4;
-                if (comp.length == 0){
-                    //ctx.drawImage(img, 100, 40, 150, 150); //IE
-                } else {
-                    for (i = comp.length; i--; ) {
-                        ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
-                        /*console.log("x");
-                        console.log(comp[i].x);
-                        console.log("y");
-                        console.log(comp[i].y);*/
-                    }
-                }
-            }
-
-            function tomarFoto(){
-                document.getElementById('output').style.visibility = "visible";
-                var output = document.getElementById('output');
-                var ctx = output.getContext("2d");
-                var source = document.getElementById('canvas');
-                ctx.drawImage(source, 0, 0);
-            }
-
-            function otraVez(){
-
-                document.getElementById('output').style.visibility = "hidden";
-            }
-
         </script>
         <div id="controles">
             <input type="button" class="boton" style="background:url('img/mini1.png');" onclick="cambiarImagen('1')" />
