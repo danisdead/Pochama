@@ -13,3 +13,14 @@
 #cam_fuego, #cam_salsa, #cam_original {
 	display: none;
 }
+
+#takis_fuego, #takis_salsa, #takis_original{
+	cursor: pointer;
+}
+
+#cont_botones{
+	height: 166px;
+	width: 53px;
+	float: right;
+	margin: 288px 66px 0px 0px;
+}

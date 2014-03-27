@@ -1,28 +1,31 @@
 	$(document).ready(function(){
 
-		$('area').on('click', function(){
+		var div = "#";
 
-			var div = "#";
+		$('#takis_fuego').on('click', function(){
+
 			div += $(this).parents().eq(1).attr('id');
-			var alt = $(this).attr('alt');
+			$(div).fadeOut('slow', function(){
+					$('#cam_fuego').fadeIn('slow');
+			});
 
-			switch(alt){
-				case 'Fuego':
-				$(div).fadeOut('slow', function(){
-					$('#cam_fuego').fadeIn('slow');	
-				});
-				break;
-				case 'Salsa Brava':
-				$(div).fadeOut('slow', function(){
+		})
+
+		$('#takis_salsa').on('click', function(){
+
+			div += $(this).parents().eq(1).attr('id');
+			$(div).fadeOut('slow', function(){
 					$('#cam_salsa').fadeIn('slow');	
-				});
-				break;
-				case 'Original':
-				$(div).fadeOut('slow', function(){
+			});
+
+		})
+
+		$('#takis_original').on('click', function(){
+
+			div += $(this).parents().eq(1).attr('id');
+			$(div).fadeOut('slow', function(){
 					$('#cam_original').fadeIn('slow');	
-				});
-				break;
-			}
+			});
 
 		})
 	})
