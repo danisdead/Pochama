@@ -9,12 +9,17 @@
 <body>
 	<div id="container">
 		<div id="cam_neut">
-			<img src="img/NEUTRAL.png" usemap="imgmap2014326131234">
+			<div style="border: solid 1px #000; height: 166px;width: 53px; float: right; margin: 288px 66px 0px 0px;">
+				<input type="button" value="" style="border: 1px solid #FFF; width: 51px; height: 51px; background-color: transparent;">
+				<input type="button" value="" style="border:none; width:100px; height: 100px">
+				<input type="button" value="" style="border:none; width:100px; height: 100px">
+			</div>
+			<!--img src="img/NEUTRAL.png" usemap="imgmap2014326131234">
 			<map id="imgmap2014326131234" name="imgmap2014326131234">
 				<area shape="circle" alt="Fuego" title="" coords="705,315,21" target="" href="javascript:void(0);" />
 				<area shape="circle" alt="Salsa Brava" title="" coords="705,372,22" target="" href="javascript:void(0);" />
-				<area shape="circle" alt="Original" title="" coords="706,431,21" target="" href="javascript:void(0);" />
-			</map>
+				<area shape="containercle" alt="Original" title="" coords="706,431,21" target="" href="javascript:void(0);" />
+			</map-->
 		</div>
 		<div id="cam_fuego">
 			<img src="img/FUEGO.png" usemap="imgmap2014326164216">

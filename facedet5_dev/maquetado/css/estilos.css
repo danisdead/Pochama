@@ -4,8 +4,8 @@
 	margin: 0 auto;
 }
 
-#cam_frame{
-	background: url('../img/NEUTRAL.png') no-repeat;
+#cam_neut{
+	background: url("../img/NEUTRAL.png") no-repeat;
 	width: 800px;
 	height: 600px;
 }
