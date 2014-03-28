@@ -2,7 +2,7 @@
 
 		var div = "#";
 
-		$('#takis_fuego').on('click', function(){
+		$('.takis_fuego').on('click', function(){
 
 			div += $(this).parents().eq(1).attr('id');
 			$(div).fadeOut('slow', function(){
@@ -11,7 +11,7 @@
 
 		})
 
-		$('#takis_salsa').on('click', function(){
+		$('.takis_salsa').on('click', function(){
 
 			div += $(this).parents().eq(1).attr('id');
 			$(div).fadeOut('slow', function(){
@@ -20,7 +20,7 @@
 
 		})
 
-		$('#takis_original').on('click', function(){
+		$('.takis_original').on('click', function(){
 
 			div += $(this).parents().eq(1).attr('id');
 			$(div).fadeOut('slow', function(){

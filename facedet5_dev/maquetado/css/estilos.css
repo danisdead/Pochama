@@ -14,11 +14,44 @@
 	display: none;
 }
 
-#takis_fuego, #takis_salsa, #takis_original{
+#cam_fuego{
+	background: url("../img/FUEGO.png");
+	width: 800px;
+	height: 600px;
+}
+
+#cam_salsa{
+	background: url("../img/SALSABRAVA.png");
+	width: 800px;
+	height: 600px;
+}
+
+#cam_original{
+	background: url("../img/ORIGINALES.png");
+	width: 800px;
+	height: 600px;
+}
+
+.takis_fuego, .takis_salsa, .takis_original{
 	cursor: pointer;
 }
 
-#cont_botones{
+.takis_fuego{
+	border-style: none;
+	width: 51px;
+	height: 51px;
+	background-color: transparent;
+}
+
+.takis_salsa, .takis_original{
+	border-style: none;
+	width: 51px;
+	height: 51px;
+	background-color: transparent;
+	margin-top: 4px;
+}
+
+.cont_botones{
 	height: 166px;
 	width: 53px;
 	float: right;
