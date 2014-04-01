@@ -57,3 +57,25 @@
 	float: right;
 	margin: 288px 66px 0px 0px;
 }
+
+.cont_boton_filtro{
+	width: 147px;
+	height: 31px;
+	position: relative;
+	top: 530px;
+	left: 308px;
+}
+
+.boton_filtro_fuego{
+	width: 147px;
+	height: 31px;
+	border-style: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+#rollo_fuego{
+	background: url('../img/ROLLO_FUEGO.png');
+	width: 800px;
+	height: 600px;
+}

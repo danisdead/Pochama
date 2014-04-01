@@ -21,6 +21,9 @@
 				<input class="takis_salsa" type="button" value="">
 				<input class="takis_original" type="button" value="">
 			</div>
+			<div class="cont_boton_filtro">
+				<input type="button" class="boton_filtro_fuego">
+			</div>	
 		</div>
 		<div id="cam_salsa">
 			<div class="cont_botones">
