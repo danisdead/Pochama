@@ -29,9 +29,15 @@ $(document).ready(function(){
 
 		$('input.boton_filtro_fuego').on('click', function(){
 
-			var div_rollo = $('<div>');
-			div_rollo.attr('class', 'boton_filtro_fuego');
-			$(document).append(div_rollo);
+			$('div#rollo_fuego').toggle();
 
+		});
+
+		 $(document).on('mouseup', function(e){
+		 	var container = $("#rollo_fuego");
+
+		    if (container.has(e.target).length === 0){
+		        container.hide(0);
+		    }
 		})
 })

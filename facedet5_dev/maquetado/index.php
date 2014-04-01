@@ -24,6 +24,8 @@
 			<div class="cont_boton_filtro">
 				<input type="button" class="boton_filtro_fuego">
 			</div>	
+			<div id="rollo_fuego">
+			</div>
 		</div>
 		<div id="cam_salsa">
 			<div class="cont_botones">
