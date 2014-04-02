@@ -13,3 +13,68 @@
 #cam_fuego, #cam_salsa, #cam_original {
 	display: none;
 }
+#cam_fuego, #cam_salsa, #cam_original{
+	width: 800px;
+	height: 600px;
+}
+
+#cam_fuego{
+	background: url("../img/FUEGO.png");
+}
+
+#cam_salsa{
+	background: url("../img/SALSABRAVA.png");
+}
+
+#cam_original{
+	background: url("../img/ORIGINALES.png");
+}
+
+.takis_fuego, .takis_salsa, .takis_original{
+	cursor: pointer;
+}
+
+.takis_fuego, .takis_salsa, .takis_original{
+	border-style: none;
+	width: 51px;
+	height: 51px;
+	background-color: transparent;
+}
+
+.takis_salsa, .takis_original{
+	margin-top: 4px;
+}
+
+.cont_botones{
+	height: 166px;
+	width: 53px;
+	float: right;
+	margin: 288px 66px 0px 0px;
+}
+
+.cont_boton_filtro{
+	width: 147px;
+	height: 31px;
+	position: relative;
+	top: 530px;
+	left: 308px;
+}
+
+.boton_filtro_fuego{
+	width: 147px;
+	height: 31px;
+	border-style: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+#rollo_fuego{
+	display: none;
+	background: url('../img/ROLLO_FUEGO.png');
+	width: 591px;
+	height: 205px;
+	position: relative;
+	top: 298px;
+	left: 42px;
+	opacity: .9	;
+}
