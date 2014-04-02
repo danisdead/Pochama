@@ -16,8 +16,15 @@ function cambiarImagen(numImg){
             break;
     }
     window.cancelAnimationFrame(drawToCanvas);
+    window.cancelAnimationFrame(drawToCanvasIE);
     document.getElementById("elegida").innerHTML = ruta;
-    drawToCanvas();              
+    
+    if (navigator.appName == "Microsoft Internet Explorer") {
+        drawToCanvasIE2();
+    } else {
+        drawToCanvas();
+    }
+
 }
 
 function drawToCanvas(){
@@ -32,7 +39,6 @@ function drawToCanvas(){
         min_neighbors: 1
     });
 
-    //var img=document.getElementById("scream");
     var img = new Image();
     var rutaImgn = document.getElementById("elegida").innerHTML;
     if (rutaImgn == "Elige una imagen"){
@@ -41,10 +47,6 @@ function drawToCanvas(){
         img.src = document.getElementById("elegida").innerHTML;
     }
                 
-    var w = 300 / 4 * 0.8;
-    var h = 270 / 4 * 0.8;
-    var m = 4;
-    var w = 4;
     if (comp.length == 0){
         //ctx.drawImage(img, 100, 40, 150, 150); //IE
     } else {
@@ -54,12 +56,53 @@ function drawToCanvas(){
     }
 }
 
+function drawToCanvasIE(){
+    document.getElementById('imagenie').style.display = "inline";
+    var rutaImgn = document.getElementById("elegida").innerHTML;
+    if (rutaImgn == "Elige una imagen"){
+        rutaImgn = "facedet/glasses_original.png";
+    } else {
+        rutaImgn = document.getElementById("elegida").innerHTML;
+    }
+    document.getElementById('imagenie').src = rutaImgn;
+}
+
+function drawToCanvasIE2(){
+    window.requestAnimationFrame(drawToCanvas);
+    var c=document.getElementById("canvas");
+    var ctx=c.getContext("2d");
+
+    var comp = ccv.detect_objects({
+        canvas: c,
+        cascade: cascade,
+        interval: 1, 
+        min_neighbors: 1
+    });
+
+    var img = new Image();
+    var rutaImgn = document.getElementById("elegida").innerHTML;
+    if (rutaImgn == "Elige una imagen"){
+        img.src = "facedet/glasses_original.png";
+    } else {
+        img.src = document.getElementById("elegida").innerHTML;
+    }
+                
+    if (comp.length == 0){
+        document.getElementById('imagenie').style.display = "inline";
+        document.getElementById('imagenie').src = rutaImgn;
+    } else {
+        for (i = comp.length; i--; ) {
+            ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
+        }
+    }
+}
+
 function tomarFoto(){
-    document.getElementById('output').style.visibility = "visible";
     var output = document.getElementById('output');
     var ctx = output.getContext("2d");
     var source = document.getElementById('canvas');
     ctx.drawImage(source, 0, 0);
+    document.getElementById('output').style.visibility = "visible";
 }
 
 function otraVez(){

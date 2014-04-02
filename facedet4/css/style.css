@@ -29,7 +29,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 }
 #output{
     position: relative;
-    top: -493px;
+    top: -490px;
     visibility: hidden;
 }
 .container{
@@ -41,4 +41,14 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 }
 #elegida{
     color:transparent;
+}
+#imagenie{
+    position:relative;
+    top:-600px;
+    width: 170px;
+    left:40px;
+    top: -698px;
+    width: 189px;
+    left: 96px;
+    display:none;
 }
