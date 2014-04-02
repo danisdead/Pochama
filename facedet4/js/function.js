@@ -20,11 +20,10 @@ function cambiarImagen(numImg){
     document.getElementById("elegida").innerHTML = ruta;
     
     if (navigator.appName == "Microsoft Internet Explorer") {
-        drawToCanvasIE2();
+        drawToCanvasIE();
     } else {
         drawToCanvas();
     }
-
 }
 
 function drawToCanvas(){
@@ -57,17 +56,6 @@ function drawToCanvas(){
 }
 
 function drawToCanvasIE(){
-    document.getElementById('imagenie').style.display = "inline";
-    var rutaImgn = document.getElementById("elegida").innerHTML;
-    if (rutaImgn == "Elige una imagen"){
-        rutaImgn = "facedet/glasses_original.png";
-    } else {
-        rutaImgn = document.getElementById("elegida").innerHTML;
-    }
-    document.getElementById('imagenie').src = rutaImgn;
-}
-
-function drawToCanvasIE2(){
     window.requestAnimationFrame(drawToCanvas);
     var c=document.getElementById("canvas");
     var ctx=c.getContext("2d");
