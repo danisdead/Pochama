@@ -33,12 +33,22 @@
 				<input class="takis_salsa" type="button" value="">
 				<input class="takis_original" type="button" value="">
 			</div>
+			<div class="cont_boton_filtro">
+				<input type="button" class="boton_filtro_salsa">
+			</div>	
+			<div id="rollo_salsa">
+			</div>
 		</div>
 		<div id="cam_original">
 			<div class="cont_botones">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
 				<input class="takis_original" type="button" value="">
+			</div>
+			<div class="cont_boton_filtro">
+				<input type="button" class="boton_filtro_originales">
+			</div>	
+			<div id="rollo_originales">
 			</div>
 		</div>
 	</div>
