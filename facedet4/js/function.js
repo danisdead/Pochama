@@ -14,6 +14,9 @@ function cambiarImagen(numImg){
     case '4':
             ruta = "facedet/ojos.png";
             break;
+    case '5':
+            ruta = "facedet/hat.png";
+            break;
     }
     window.cancelAnimationFrame(drawToCanvas);
     window.cancelAnimationFrame(drawToCanvasIE);
@@ -24,6 +27,12 @@ function cambiarImagen(numImg){
     } else {
         drawToCanvas();
     }
+}
+
+var tipoImg; 
+
+function setTipoImg(tipo){
+    tipoImg = tipo;
 }
 
 function drawToCanvas(){
@@ -44,13 +53,22 @@ function drawToCanvas(){
         img.src = "facedet/glasses_original.png";
     } else {
         img.src = document.getElementById("elegida").innerHTML;
+        //img.src = "facedet/hat.png";
     }
-                
+    /*switch(rutaImgn){
+    case 'facedet/hat.png': //Tipo sombrero
+
+            break;
+    case '2': // Tipo cara
+            ruta = "facedet/glasses2.png";
+            break;
+    } */
     if (comp.length == 0){
         //ctx.drawImage(img, 100, 40, 150, 150); //IE
     } else {
         for (i = comp.length; i--; ) {
             ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
+            //ctx.drawImage(img, comp[i].x, (comp[i].y - comp[i].height), comp[i].width, comp[i].height);
         }
     }
 }
