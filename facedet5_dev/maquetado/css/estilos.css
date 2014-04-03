@@ -19,7 +19,7 @@
 }
 
 #cam_fuego{
-	background: url("../img/FUEGO.png");
+/*	background: url("../img/FUEGO.png");*/
 }
 
 #cam_salsa{
@@ -60,7 +60,7 @@
 	left: 308px;
 }
 
-.boton_filtro_fuego{
+.boton_filtro_fuego, .boton_filtro_salsa, .boton_filtro_originales{
 	width: 147px;
 	height: 31px;
 	border-style: none;
@@ -68,9 +68,8 @@
 	cursor: pointer;
 }
 
-#rollo_fuego{
+#rollo_fuego, #rollo_salsa, #rollo_originales{
 	display: none;
-	background: url('../img/ROLLO_FUEGO.png');
 	width: 591px;
 	height: 205px;
 	position: relative;
@@ -78,3 +77,15 @@
 	left: 42px;
 	opacity: .9	;
 }
+
+#rollo_fuego{
+	background: url('../img/ROLLO_FUEGO.png');
+}
+
+#rollo_salsa{
+	background: url('../img/FILTRO_SALSABRAVA.png');
+}
+
+ #rollo_originales{
+ 	background: url('../img/FILTRO_ORIGINALES.png');
+ }

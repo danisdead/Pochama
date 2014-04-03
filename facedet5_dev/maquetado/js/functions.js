@@ -22,22 +22,45 @@ $(document).ready(function(){
 			var div = "#";
 			div += $(this).parents().eq(1).attr('id');
 			$(div).fadeOut('slow', function(){
-					$('#cam_original').fadeIn('slow');	
+						$('#cam_original').fadeIn('slow');	
 			});
 
 		})
 
 		$('input.boton_filtro_fuego').on('click', function(){
 
-			$('div#rollo_fuego').toggle();
+			$('div#rollo_fuego').toggle('fast');
 
 		});
 
-		 $(document).on('mouseup', function(e){
-		 	var container = $("#rollo_fuego");
+		$('input.boton_filtro_salsa').on('click', function(){
 
-		    if (container.has(e.target).length === 0){
-		        container.hide(0);
+			$('div#rollo_salsa').toggle('fast');
+
+		});
+
+		$('input.boton_filtro_originales').on('click', function(){
+
+			$('div#rollo_originales').toggle('fast');
+
+		});
+
+
+		$(document).mouseup(function (e){
+
+		    var container = $("div#rollo_fuego");
+		    var container_salsa = $("div#rollo_salsa");
+		    var container_original = $("div#rollo_original");
+
+		    if (!container.is(e.target) && container.has(e.target).length === 0){
+		        container.hide();
 		    }
-		})
+		    if (!container_salsa.is(e.target) && container_salsa.has(e.target).length === 0){
+		        container_salsa.hide();
+		    }
+		    if (!container_original.is(e.target) && container_original.has(e.target).length === 0){
+		        container_original.hide();
+		    }
+		});
+
 })
