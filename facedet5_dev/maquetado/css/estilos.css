@@ -89,3 +89,15 @@
  #rollo_originales{
  	background: url('../img/FILTRO_ORIGINALES.png');
  }
+
+ #camara{
+ 	position:relative; top: 100px; left:100px;
+ }
+
+ #object_container{
+	position: relative;
+	top: 427px;
+	left: 230px;
+	margin-top: -155px;
+	width: 320px;
+}

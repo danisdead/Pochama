@@ -64,7 +64,8 @@ $(document).ready(function(){
 		    }
 		});
 
-function cambiarImagen(numImg){
+
+        function cambiarImagen(numImg){
     var imagen = numImg;
     var ruta;
     switch(imagen){
@@ -162,5 +163,7 @@ function tomarFoto(){
 function otraVez(){
     document.getElementById('output').style.visibility = "hidden";
 }
+
+
 
 })
