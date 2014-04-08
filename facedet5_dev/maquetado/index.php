@@ -40,8 +40,8 @@
 		</div>
 		<!--div id="cam_fuego"-->
 		<img id="cam_fuego" src="img/FUEGO.png" width="800px" height="600px" style="position: relative; z-index: 2;">
-			<div id="content_canvas" style="position: relative; display:none; top: -396px; left: 173px; z-index: 1;">
-				<canvas id="canvas" width="373" height="243" style="height: 272px;"></canvas>
+			<div id="content_canvas" style="position: relative; display:none; top: -396px; left: 173px; z-index: -1; width: 418px; float: left;">
+				<canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
 			</div>
 			<div class="cont_botones">
 				<input class="takis_fuego" type="button" value="">

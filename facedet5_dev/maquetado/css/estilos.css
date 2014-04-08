@@ -49,7 +49,10 @@
 	height: 166px;
 	width: 53px;
 	float: right;
-	margin: 288px 66px 0px 0px;
+	position: relative;
+	top: 289px;
+	right: 65px;
+	/*margin: 288px 66px 0px 0px;*/
 }
 
 .cont_boton_filtro{
