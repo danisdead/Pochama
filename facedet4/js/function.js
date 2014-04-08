@@ -1,3 +1,4 @@
+var drawFaceId, drawHatId, drawFaceIdIE, drawHatIdIE, drawFixedImageId;
 function cambiarImagen(numImg){
     var imagen = numImg;
     var ruta, tipoImg;
@@ -14,6 +15,10 @@ function cambiarImagen(numImg){
             ruta = "facedet/mono.png";
             tipoImg = "cara";
             break;
+        case '4':
+            ruta = "facedet/ojos.png";
+            tipoImg = "cara";
+            break;
         case '5':
             ruta = "facedet/hat.png";
             tipoImg = "sombrero";
@@ -24,29 +29,33 @@ function cambiarImagen(numImg){
             break;
     }
     document.getElementById("elegida").innerHTML = ruta;
-    stopAllAnimations();
     if (navigator.appName == "Microsoft Internet Explorer") {
-        drawToCanvasIE();
          switch(tipoImg){
             case "cara":
+                stopAllAnimations();
                 drawFaceIE();
                 break;
             case "sombrero":
+                stopAllAnimations();
                 drawHatIE();
                 break;
             case "imagen":
+                stopAllAnimations();
                 drawFixedImage();
                 break;
         }
     } else {
         switch(tipoImg){
             case "cara":
+                stopAllAnimations();
                 drawFace();
                 break;
             case "sombrero":
+                stopAllAnimations();
                 drawHat();
                 break;
             case "imagen":
+                stopAllAnimations();
                 drawFixedImage();
                 break;
         }
@@ -54,17 +63,17 @@ function cambiarImagen(numImg){
 }
 
 function stopAllAnimations(){
-    window.cancelAnimationFrame(drawFace);
-    window.cancelAnimationFrame(drawHat);
-    window.cancelAnimationFrame(drawFixedImage);
-    window.cancelAnimationFrame(drawFaceIE);
-    window.cancelAnimationFrame(drawHatIE);
+    window.cancelAnimationFrame(drawFaceId);
+    window.cancelAnimationFrame(drawHatId);
+    window.cancelAnimationFrame(drawFixedImageId);
+    window.cancelAnimationFrame(drawFaceIdIE);
+    window.cancelAnimationFrame(drawHatIdIE);
     console.log("Stop");
 }
 
 function drawFace(){
     console.log("face");
-    window.requestAnimationFrame(drawFace);
+    drawFaceId = window.requestAnimationFrame(drawFace);
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
 
@@ -86,7 +95,7 @@ function drawFace(){
 
 function drawHat(){
     console.log("hat");
-    window.requestAnimationFrame(drawHat);
+    var drawHatId = window.requestAnimationFrame(drawHat);
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
 
@@ -107,7 +116,7 @@ function drawHat(){
 
 function drawFixedImage(){
     console.log("image");
-    //window.requestAnimationFrame(drawFixedImage);
+    drawFixedImageId = window.requestAnimationFrame(drawFixedImage);
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
     var img = new Image();
@@ -116,7 +125,7 @@ function drawFixedImage(){
 }
 
 function drawFaceIE(){
-    window.requestAnimationFrame(drawFaceIE);
+    drawFaceIdIE = window.requestAnimationFrame(drawFaceIE);
     var c=document.getElementById("canvas");
     var ctx=c.getContext("2d");
 
@@ -140,7 +149,7 @@ function drawFaceIE(){
 }
 
 function drawHatIE(){
-    window.requestAnimationFrame(drawHatIE);
+    drawHatIdIE = window.requestAnimationFrame(drawHatIE);
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
 
