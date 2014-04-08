@@ -17,6 +17,7 @@
         function camStatus(status) {
             if (status == "ENABLED") {
                 $(document).find('div#object_container').css('opacity','0');
+                $('#content_canvas').show();
                 document.getElementById('camera').style.width = width + "px";
                 document.getElementById('camera').style.height = height + "px";
                 //mostrar #elcanvas de la camara
