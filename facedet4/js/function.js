@@ -41,7 +41,7 @@ function cambiarImagen(numImg){
                 break;
             case "imagen":
                 stopAllAnimations();
-                drawFixedImage();
+                drawFixedImageIE();
                 break;
         }
     } else {
@@ -66,9 +66,6 @@ function stopAllAnimations(){
     window.cancelAnimationFrame(drawFaceId);
     window.cancelAnimationFrame(drawHatId);
     window.cancelAnimationFrame(drawFixedImageId);
-    window.cancelAnimationFrame(drawFixedImageIEId);
-    window.cancelAnimationFrame(drawFaceIdIE);
-    window.cancelAnimationFrame(drawHatIdIE);
     console.log("Stop");
 }
 
@@ -126,6 +123,7 @@ function drawFixedImage(){
 }
 
 function drawFaceIE(){
+    console.log("face ie");
     //drawFaceIdIE = window.requestAnimationFrame(drawFaceIE);
     var c=document.getElementById("canvas");
     var ctx=c.getContext("2d");
@@ -142,10 +140,12 @@ function drawFaceIE(){
 
     //if (comp.length == 0){
         document.getElementById('imagenie').style.display = "inline";
-        document.getElementById('imagenie').style.top = "-678px";
-        document.getElementById('imagenie').style.left = "96px";
+        document.getElementById('imagenie').style.top = "52px";
+        document.getElementById('imagenie').style.left = "103px";
         document.getElementById('imagenie').style.width = "150px";
+        document.getElementById('imagenie').style.height = "150px";
         document.getElementById('imagenie').src = img.src;
+        
     /*} else {
         for (i = comp.length; i--; ) {
             ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
@@ -154,7 +154,8 @@ function drawFaceIE(){
 }
 
 function drawHatIE(){
-    drawHatIdIE = window.requestAnimationFrame(drawHatIE);
+    console.log("hat ie");
+    //drawHatIdIE = window.requestAnimationFrame(drawHatIE);
     var c=document.getElementById("canvas");
     var ctx=c.getContext("2d");
 
@@ -162,15 +163,16 @@ function drawHatIE(){
     img.src = document.getElementById("elegida").innerHTML;
 
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "-740px";
+    document.getElementById('imagenie').style.top = "0px";
     document.getElementById('imagenie').style.left = "120px";
     document.getElementById('imagenie').style.width = "120px";
+    document.getElementById('imagenie').style.height = "100px";
     document.getElementById('imagenie').src = img.src;
 }
 
 function drawFixedImageIE(){
     console.log("fixed imageie");
-    drawFixedImageIEId = window.requestAnimationFrame(drawFixedImageIE);
+    //drawFixedImageIEId = window.requestAnimationFrame(drawFixedImageIE);
     var c=document.getElementById("canvas");
     var ctx=c.getContext("2d");
 
@@ -178,7 +180,7 @@ function drawFixedImageIE(){
     img.src = document.getElementById("elegida").innerHTML;
 
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "-740px";
+    document.getElementById('imagenie').style.top = "0px";
     document.getElementById('imagenie').style.left = "0px";
     document.getElementById('imagenie').style.width = "373px";
     document.getElementById('imagenie').style.height = "243px";

@@ -14,38 +14,33 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
     box-shadow:         0px 0px 24px 0px rgba(198, 50, 255, 1);
 }
 #flash {
-    position:absolute;
-    top:0px;
-    left:0px;
     z-index:5000;
     width:100%;
     height:300px;
     background-color:#FFFFFF;
 }
 #canvas{
-    position: relative;
-    top: -245px;
     visibility: hidden;
+    position: absolute;
+    top: 0px;
+    left:0px;
 }
 #output{
-    position: relative;
-    top: -490px;
     visibility: hidden;
+    position: absolute;
+    left: 0px;
 }
 .container{
     width:400px;
 }
 #controles{
-    position:relative;
-    top: -480px;
+    
 }
 #elegida{
     color:transparent;
 }
 #imagenie{
-    position:relative;
-    top: -698px;
-    width: 189px;
-    left: 96px;
     display:none;
+    position: absolute;
+
 }
