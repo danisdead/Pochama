@@ -1,4 +1,4 @@
-var drawFaceId, drawHatId, drawFaceIdIE, drawHatIdIE, drawFixedImageId, drawFixedImageIEId;
+var drawFaceId, drawHatId, drawFixedImageId;
 function cambiarImagen(numImg){
     var imagen = numImg;
     var ruta, tipoImg;
@@ -93,7 +93,7 @@ function drawFace(){
 
 function drawHat(){
     console.log("hat");
-    var drawHatId = window.requestAnimationFrame(drawHat);
+    drawHatId = window.requestAnimationFrame(drawHat);
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
 
@@ -124,44 +124,24 @@ function drawFixedImage(){
 
 function drawFaceIE(){
     console.log("face ie");
-    //drawFaceIdIE = window.requestAnimationFrame(drawFaceIE);
     var c=document.getElementById("canvas");
     var ctx=c.getContext("2d");
-
-    /*var comp = ccv.detect_objects({
-        canvas: c,
-        cascade: cascade,
-        interval: 1,
-        min_neighbors: 1
-    });*/
-
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
-
-    //if (comp.length == 0){
-        document.getElementById('imagenie').style.display = "inline";
-        document.getElementById('imagenie').style.top = "52px";
-        document.getElementById('imagenie').style.left = "103px";
-        document.getElementById('imagenie').style.width = "150px";
-        document.getElementById('imagenie').style.height = "150px";
-        document.getElementById('imagenie').src = img.src;
-        
-    /*} else {
-        for (i = comp.length; i--; ) {
-            ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
-        }
-    }*/
+    document.getElementById('imagenie').style.display = "inline";
+    document.getElementById('imagenie').style.top = "52px";
+    document.getElementById('imagenie').style.left = "103px";
+    document.getElementById('imagenie').style.width = "150px";
+    document.getElementById('imagenie').style.height = "150px";
+    document.getElementById('imagenie').src = img.src;
 }
 
 function drawHatIE(){
     console.log("hat ie");
-    //drawHatIdIE = window.requestAnimationFrame(drawHatIE);
     var c=document.getElementById("canvas");
     var ctx=c.getContext("2d");
-
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
-
     document.getElementById('imagenie').style.display = "inline";
     document.getElementById('imagenie').style.top = "0px";
     document.getElementById('imagenie').style.left = "120px";
@@ -172,13 +152,10 @@ function drawHatIE(){
 
 function drawFixedImageIE(){
     console.log("fixed imageie");
-    //drawFixedImageIEId = window.requestAnimationFrame(drawFixedImageIE);
     var c=document.getElementById("canvas");
     var ctx=c.getContext("2d");
-
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
-
     document.getElementById('imagenie').style.display = "inline";
     document.getElementById('imagenie').style.top = "0px";
     document.getElementById('imagenie').style.left = "0px";

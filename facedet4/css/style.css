@@ -16,8 +16,11 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 #flash {
     z-index:5000;
     width:100%;
-    height:300px;
+    height:100%;
     background-color:#FFFFFF;
+    position: absolute;
+    left: 0px;
+    top:0px;
 }
 #canvas{
     visibility: hidden;
@@ -28,6 +31,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 #output{
     visibility: hidden;
     position: absolute;
+    top: 0px;
     left: 0px;
 }
 .container{
