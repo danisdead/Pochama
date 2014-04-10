@@ -1,3 +1,4 @@
+var drawFaceId, drawHatId, drawFaceIdIE, drawHatIdIE, drawFixedImageId, drawFixedImageIEId;
 function cambiarImagen(numImg){
     var imagen = numImg;
     var ruta, tipoImg;
@@ -14,6 +15,10 @@ function cambiarImagen(numImg){
             ruta = "facedet/mono.png";
             tipoImg = "cara";
             break;
+        case '4':
+            ruta = "facedet/ojos.png";
+            tipoImg = "cara";
+            break;
         case '5':
             ruta = "facedet/hat.png";
             tipoImg = "sombrero";
@@ -24,29 +29,33 @@ function cambiarImagen(numImg){
             break;
     }
     document.getElementById("elegida").innerHTML = ruta;
-    stopAllAnimations();
     if (navigator.appName == "Microsoft Internet Explorer") {
-        drawToCanvasIE();
          switch(tipoImg){
             case "cara":
+                stopAllAnimations();
                 drawFaceIE();
                 break;
             case "sombrero":
+                stopAllAnimations();
                 drawHatIE();
                 break;
             case "imagen":
-                drawFixedImage();
+                stopAllAnimations();
+                drawFixedImageIE();
                 break;
         }
     } else {
         switch(tipoImg){
             case "cara":
+                stopAllAnimations();
                 drawFace();
                 break;
             case "sombrero":
+                stopAllAnimations();
                 drawHat();
                 break;
             case "imagen":
+                stopAllAnimations();
                 drawFixedImage();
                 break;
         }
@@ -54,24 +63,22 @@ function cambiarImagen(numImg){
 }
 
 function stopAllAnimations(){
-    window.cancelAnimationFrame(drawFace);
-    window.cancelAnimationFrame(drawHat);
-    window.cancelAnimationFrame(drawFixedImage);
-    window.cancelAnimationFrame(drawFaceIE);
-    window.cancelAnimationFrame(drawHatIE);
+    window.cancelAnimationFrame(drawFaceId);
+    window.cancelAnimationFrame(drawHatId);
+    window.cancelAnimationFrame(drawFixedImageId);
     console.log("Stop");
 }
 
 function drawFace(){
     console.log("face");
-    window.requestAnimationFrame(drawFace);
+    drawFaceId = window.requestAnimationFrame(drawFace);
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
 
     var comp = ccv.detect_objects({
         canvas: c,
         cascade: cascade,
-        interval: 1,
+        interval: 2, //Sensibilidad del face detection. 
         min_neighbors: 1
     });
 
@@ -86,7 +93,7 @@ function drawFace(){
 
 function drawHat(){
     console.log("hat");
-    window.requestAnimationFrame(drawHat);
+    var drawHatId = window.requestAnimationFrame(drawHat);
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
 
@@ -107,7 +114,7 @@ function drawHat(){
 
 function drawFixedImage(){
     console.log("image");
-    //window.requestAnimationFrame(drawFixedImage);
+    drawFixedImageId = window.requestAnimationFrame(drawFixedImage);
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
     var img = new Image();
@@ -116,51 +123,69 @@ function drawFixedImage(){
 }
 
 function drawFaceIE(){
-    window.requestAnimationFrame(drawFaceIE);
+    console.log("face ie");
+    //drawFaceIdIE = window.requestAnimationFrame(drawFaceIE);
     var c=document.getElementById("canvas");
     var ctx=c.getContext("2d");
 
-    var comp = ccv.detect_objects({
+    /*var comp = ccv.detect_objects({
         canvas: c,
         cascade: cascade,
         interval: 1,
         min_neighbors: 1
-    });
+    });*/
 
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
 
-    if (comp.length == 0){
-        ctx.drawImage(img, 105, 50, 160, 160);
-    } else {
+    //if (comp.length == 0){
+        document.getElementById('imagenie').style.display = "inline";
+        document.getElementById('imagenie').style.top = "52px";
+        document.getElementById('imagenie').style.left = "103px";
+        document.getElementById('imagenie').style.width = "150px";
+        document.getElementById('imagenie').style.height = "150px";
+        document.getElementById('imagenie').src = img.src;
+        
+    /*} else {
         for (i = comp.length; i--; ) {
             ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
         }
-    }
+    }*/
 }
 
 function drawHatIE(){
-    window.requestAnimationFrame(drawHatIE);
-    var c = document.getElementById("canvas");
-    var ctx = c.getContext("2d");
-
-    var comp = ccv.detect_objects({
-        canvas: c,
-        cascade: cascade,
-        interval: 1,
-        min_neighbors: 1
-    });
+    console.log("hat ie");
+    //drawHatIdIE = window.requestAnimationFrame(drawHatIE);
+    var c=document.getElementById("canvas");
+    var ctx=c.getContext("2d");
 
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
 
-    if (comp.length == 0){
-        ctx.drawImage(img, 120, 0, 130, 120);
-    } else {
-        for (i = comp.length; i--; ) {
-            ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
-        }
-    }
+    document.getElementById('imagenie').style.display = "inline";
+    document.getElementById('imagenie').style.top = "0px";
+    document.getElementById('imagenie').style.left = "120px";
+    document.getElementById('imagenie').style.width = "120px";
+    document.getElementById('imagenie').style.height = "100px";
+    document.getElementById('imagenie').src = img.src;
+}
+
+function drawFixedImageIE(){
+    console.log("fixed imageie");
+    //drawFixedImageIEId = window.requestAnimationFrame(drawFixedImageIE);
+    var c=document.getElementById("canvas");
+    var ctx=c.getContext("2d");
+
+    var img = new Image();
+    img.src = document.getElementById("elegida").innerHTML;
+
+    document.getElementById('imagenie').style.display = "inline";
+    document.getElementById('imagenie').style.top = "0px";
+    document.getElementById('imagenie').style.left = "0px";
+    document.getElementById('imagenie').style.width = "373px";
+    document.getElementById('imagenie').style.height = "243px";
+    document.getElementById('controles').style.top = "-710px";
+    document.getElementById('imagenie').src = img.src;
 }
 
 function tomarFoto(){
