@@ -27,23 +27,27 @@
     </script>
 </head>
 <body onload="displayCam()">
+    <div id="espacio"></div>
 	<div id="container">	
         <div id="object_container">
             <div id="camera"></div>
         </div>
-		<div id="cam_neut" clas>
+		<div id="cam_neut">
+            <div id="content_canvas_neut" style="position: relative; display:none; top: 206px; left: 173px; z-index: -1; width: 418px; float: left;">
+                <canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
+            </div>
 			<div class="cont_botones">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
 				<input class="takis_original" type="button" value="">
 			</div>
 		</div>
-		<!--div id="cam_fuego"-->
-		<img id="cam_fuego" src="img/FUEGO.png" width="800px" height="600px" style="position: relative; z-index: 2;">
-			<div id="content_canvas" style="position: relative; display:none; top: -396px; left: 173px; z-index: -1; width: 418px; float: left;">
+		<div id="cam_fuego_div">
+		<!--img id="cam_fuego" src="img/FUEGO.png" width="800px" height="600px" style="position: relative; z-index: 2;"-->
+			<div id="content_canvas" style="position: relative; display:none; top: 206px; left: 173px; z-index: -1; width: 418px; float: left;">
 				<canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
-			</div>
-			<div class="cont_botones">
+			</div
+>			<div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
 				<input class="takis_original" type="button" value="">
@@ -53,9 +57,9 @@
 			</div>	
 			<div id="rollo_fuego">
 			</div>
-		<!--/div-->
+		</div>
 		<div id="cam_salsa">
-			<div class="cont_botones">
+			<div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
 				<input class="takis_original" type="button" value="">
@@ -78,7 +82,7 @@
 			<div id="rollo_originales">
 			</div>
 		</div>
-        <canvas id="canvas" width="373" height="243"></canvas>
+        <!--canvas id="canvas" width="373" height="243"></canvas>
         <canvas id="output" width="373" height="243"></canvas>
         
         <img id="imagenie" src="facedet/glasses2.png" alt="The Scream" />
@@ -95,7 +99,7 @@
             <input type="button" value="Foto" id="takeSnapshot" onclick="tomarFoto()">
             <input type="button" value="Otra vez" id="retake" onclick="otraVez()">
             <div id='key' style='font-size: 48px; width:100%; padding-left:50%;float:right'>&nbsp;</div>
-        </div>
+        </div-->
 	</div>
     <script>
         $(document).ready(function(){
@@ -202,5 +206,7 @@ function otraVez(){
 }
         
     </script>
+    <script src="https://d224rrjkj24om2.cloudfront.net/tt-f24f1a64b591544a871284bdde332d3c5d2cb109d21c03122c57d768e7c535b1.js">
+</script>
 </body>
 </html>

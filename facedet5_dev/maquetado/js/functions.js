@@ -4,7 +4,8 @@ $(document).ready(function(){
 			var div = "#";
 			div += $(this).parents().eq(1).attr('id');
 			$(div).fadeOut('slow', function(){
-					$('#cam_fuego').fadeIn('slow');
+					$('#cam_fuego_div').fadeIn('slow');
+					/*$('#cam_fuego').fadeIn('slow');*/
 					$('#content_canvas').show();
 			});
 
@@ -26,6 +27,10 @@ $(document).ready(function(){
 						$('#cam_original').fadeIn('slow');	
 			});
 
+		});
+
+		$('.takis_fuego, .takis_salsa, .takis_original').on('click', function(){
+			$('#content_canvas_neut').remove();
 		})
 
 		$('input.boton_filtro_fuego').on('click', function(){

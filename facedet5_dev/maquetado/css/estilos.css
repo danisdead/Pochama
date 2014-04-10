@@ -1,3 +1,9 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+
 #container{
 	width: 800px;
 	height: 600px;
@@ -10,16 +16,16 @@
 	height: 600px;
 }
 
-#cam_fuego, #cam_salsa, #cam_original {
+#cam_fuego_div, #cam_salsa, #cam_original {
 	display: none;
 }
-#cam_fuego, #cam_salsa, #cam_original{
+#cam_fuego_div, #cam_salsa, #cam_original{
 	width: 800px;
 	height: 600px;
 }
 
-#cam_fuego{
-/*	background: url("../img/FUEGO.png");*/
+#cam_fuego_div{
+	background: url("../img/FUEGO.png");
 }
 
 #cam_salsa{
@@ -53,6 +59,17 @@
 	top: 289px;
 	right: 65px;
 	/*margin: 288px 66px 0px 0px;*/
+}
+
+.cont_botones_fuego{
+	height: 166px;
+	width: 53px;
+	float: right;
+	position: relative;
+	/*top: 289px;*/
+	right: 65px;
+	/*margin: 288px 66px 0px 0px;*/
+	z-index: 1;
 }
 
 .cont_boton_filtro{
@@ -103,4 +120,9 @@
 	left: 230px;
 	margin-top: -155px;
 	width: 320px;
+}
+
+#espacio{
+	clear:both;
+	height: 20px;
 }
