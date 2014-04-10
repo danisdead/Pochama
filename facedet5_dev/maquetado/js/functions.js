@@ -30,24 +30,24 @@ $(document).ready(function(){
 		});
 
 		$('.takis_fuego, .takis_salsa, .takis_original').on('click', function(){
-			$('#content_canvas_neut').remove();
+			/*$('#content_canvas_neut').remove();*/
 		})
 
 		$('input.boton_filtro_fuego').on('click', function(){
 
-			$('div#rollo_fuego').toggle('fast');
+			$('div#rollo_fuego').fadeIn('fast');
 
 		});
 
 		$('input.boton_filtro_salsa').on('click', function(){
 
-			$('div#rollo_salsa').toggle('fast');
+			$('div#rollo_salsa').fadeIn('fast');
 
 		});
 
 		$('input.boton_filtro_originales').on('click', function(){
 
-			$('div#rollo_originales').toggle('fast');
+			$('div#rollo_originales').fadeIn('fast');
 
 		});
 

@@ -8,6 +8,7 @@
 	width: 800px;
 	height: 600px;
 	margin: 0 auto;
+	margin-top: 20px;
 }
 
 #cam_neut{
@@ -66,7 +67,7 @@
 	width: 53px;
 	float: right;
 	position: relative;
-	/*top: 289px;*/
+	top: 289px;
 	right: 65px;
 	/*margin: 288px 66px 0px 0px;*/
 	z-index: 1;
@@ -77,7 +78,8 @@
 	height: 31px;
 	position: relative;
 	top: 530px;
-	left: 308px;
+	float: left;
+	right: 109px;
 }
 
 .boton_filtro_fuego, .boton_filtro_salsa, .boton_filtro_originales{

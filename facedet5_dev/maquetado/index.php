@@ -27,15 +27,15 @@
     </script>
 </head>
 <body onload="displayCam()">
-    <div id="espacio"></div>
 	<div id="container">	
         <div id="object_container">
             <div id="camera"></div>
+        </div>            
+        <div id="content_canvas_neut" style="position: relative; display:none; top: 206px; left: 173px; z-index: -1; width: 418px; float: left;">
+                <canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
         </div>
 		<div id="cam_neut">
-            <div id="content_canvas_neut" style="position: relative; display:none; top: 206px; left: 173px; z-index: -1; width: 418px; float: left;">
-                <canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
-            </div>
+
 			<div class="cont_botones">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -44,10 +44,10 @@
 		</div>
 		<div id="cam_fuego_div">
 		<!--img id="cam_fuego" src="img/FUEGO.png" width="800px" height="600px" style="position: relative; z-index: 2;"-->
-			<div id="content_canvas" style="position: relative; display:none; top: 206px; left: 173px; z-index: -1; width: 418px; float: left;">
+			<!--div id="content_canvas" style="position: relative; display:none; top: 206px; left: 173px; z-index: -1; width: 418px; float: left;">
 				<canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
-			</div
->			<div class="cont_botones_fuego">
+			</div-->
+            			<div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
 				<input class="takis_original" type="button" value="">
