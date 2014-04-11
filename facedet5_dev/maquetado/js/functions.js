@@ -35,7 +35,12 @@ $(document).ready(function(){
 
 		$('input.boton_filtro_fuego').on('click', function(){
 
-			$('div#rollo_fuego').fadeIn('fast');
+			if($('div#rollo_fuego').is(':visible')){
+				$('div#rollo_fuego').fadeOut('fast');
+			}else{
+				$('div#rollo_fuego').fadeIn('fast');
+			}
+			
 
 		});
 
@@ -56,16 +61,16 @@ $(document).ready(function(){
 
 		    var container = $("div#rollo_fuego");
 		    var container_salsa = $("div#rollo_salsa");
-		    var container_original = $("div#rollo_original");
+		    var container_original = $("div#rollo_originales");
 
 		    if (!container.is(e.target) && container.has(e.target).length === 0){
-		        container.hide();
+		        container.fadeOut('fast');
 		    }
 		    if (!container_salsa.is(e.target) && container_salsa.has(e.target).length === 0){
-		        container_salsa.hide();
+		        container_salsa.fadeOut('fast');
 		    }
 		    if (!container_original.is(e.target) && container_original.has(e.target).length === 0){
-		        container_original.hide();
+		        container_original.fadeOut('fast');
 		    }
 		});
 

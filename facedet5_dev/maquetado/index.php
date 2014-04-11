@@ -82,24 +82,23 @@
 			<div id="rollo_originales">
 			</div>
 		</div>
-        <!--canvas id="canvas" width="373" height="243"></canvas>
+        <canvas id="canvas" width="373" height="243"></canvas>
         <canvas id="output" width="373" height="243"></canvas>
         
         <img id="imagenie" src="facedet/glasses2.png" alt="The Scream" />
         <div id="flash"></div>
         <script src="facedet/ccv.js"></script>
         <script src="facedet/face.js"></script>
-        <img id="scream" src="facedet/glasses2.png" alt="The Scream" width="120">
         <div id="controles">
-            <input type="button" class="boton" style="background:url('img/mini1.png');" onclick="cambiarImagen('1')" />
-            <input type="button" class="boton" style="background:url('img/mini2.png');" onclick="cambiarImagen('2')" />
-            <input type="button" class="boton" style="background:url('img/mini3.png');" onclick="cambiarImagen('3')" />
-            <input type="button" class="boton" style="background:url('img/mini4.png');" onclick="cambiarImagen('4')" />
+            <input id="boton_efecto_1" type="button" class="boton" onclick="cambiarImagen('1')" />
+            <input id="boton_efecto_2" type="button" class="boton" onclick="cambiarImagen('2')" />
+            <input id="boton_efecto_3" type="button" class="boton" onclick="cambiarImagen('3')" />
+            <input id="boton_efecto_4" type="button" class="boton" onclick="cambiarImagen('4')" />
             <div id="elegida">Elige una imagen</div>
             <input type="button" value="Foto" id="takeSnapshot" onclick="tomarFoto()">
             <input type="button" value="Otra vez" id="retake" onclick="otraVez()">
             <div id='key' style='font-size: 48px; width:100%; padding-left:50%;float:right'>&nbsp;</div>
-        </div-->
+        </div>
 	</div>
     <script>
         $(document).ready(function(){
