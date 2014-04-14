@@ -17,7 +17,7 @@ function cambiarImagen(numImg){
             break;
         case '4':
             ruta = "facedet/ojos.png";
-            tipoImg = "cara";
+            tipoImg = "cara_grande";
             break;
         case '5':
             ruta = "facedet/hat.png";
@@ -58,6 +58,10 @@ function cambiarImagen(numImg){
                 stopAllAnimations();
                 drawFixedImage();
                 break;
+            case "cara_grande":
+                stopAllAnimations();
+                drawBigFace();
+                break;
         }
     }
 }
@@ -86,7 +90,29 @@ function drawFace(){
     img.src = document.getElementById("elegida").innerHTML;
 
     for (i = comp.length; i--; ) {
-        ctx.drawImage(img, comp[i].x, comp[i].y + 13, comp[i].width, comp[i].height);
+        ctx.drawImage(img, comp[i].x, comp[i].y + (comp[i].y * 0.15), comp[i].width, comp[i].height);
+    }
+    
+}
+
+function drawBigFace(){
+    console.log("big face");
+    drawFaceId = window.requestAnimationFrame(drawFace);
+    var c = document.getElementById("canvas");
+    var ctx = c.getContext("2d");
+
+    var comp = ccv.detect_objects({
+        canvas: c,
+        cascade: cascade,
+        interval: 2, //Sensibilidad del face detection. 
+        min_neighbors: 1
+    });
+
+    var img = new Image();
+    img.src = document.getElementById("elegida").innerHTML;
+
+    for (i = comp.length; i--; ) {
+        ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
     }
     
 }
