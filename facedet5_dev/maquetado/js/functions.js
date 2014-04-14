@@ -1,3 +1,7 @@
+/*
+Archivo de funciones jQuery para los efectos en las cámaras.
+*/
+
 $(document).ready(function(){
 
 		$('input.takis_fuego').on('click', function(){
@@ -33,6 +37,9 @@ $(document).ready(function(){
 			/*$('#content_canvas_neut').remove();*/
 		})
 
+		/* Funciones para hacer funcionar el botón de los filtos de forma que al
+		   clickearlo muestre u oculte los rollos para su respectiva cámara*/
+
 		$('input.boton_filtro_fuego').on('click', function(){
 
 			if($('div#rollo_fuego').is(':visible')){
@@ -46,17 +53,27 @@ $(document).ready(function(){
 
 		$('input.boton_filtro_salsa').on('click', function(){
 
-			$('div#rollo_salsa').fadeIn('fast');
+			if($('div#rollo_salsa').is(':visible')){
+				$('div#rollo_salsa').fadeOut('fast');
+			}else{
+				$('div#rollo_salsa').fadeIn('fast');
+			}
 
 		});
 
 		$('input.boton_filtro_originales').on('click', function(){
 
-			$('div#rollo_originales').fadeIn('fast');
+			if($('div#rollo_originales').is(':visible')){
+				$('div#rollo_originales').fadeOut('fast');
+			}else{
+				$('div#rollo_originales').fadeIn('fast');
+			}
 
 		});
 
-
+		/*Funcion para detectar clics fuera de los elementos del rollo y ocultar
+		  con fade el elemento al dispararse el evento*/
+		  
 		$(document).mouseup(function (e){
 
 		    var container = $("div#rollo_fuego");
