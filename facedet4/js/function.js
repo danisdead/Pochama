@@ -86,7 +86,7 @@ function drawFace(){
     img.src = document.getElementById("elegida").innerHTML;
 
     for (i = comp.length; i--; ) {
-        ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
+        ctx.drawImage(img, comp[i].x, comp[i].y + 13, comp[i].width, comp[i].height);
     }
     
 }
@@ -100,7 +100,7 @@ function drawHat(){
     var comp = ccv.detect_objects({
         canvas: c,
         cascade: cascade,
-        interval: 1,
+        interval: 3,
         min_neighbors: 1
     });
 
@@ -108,7 +108,7 @@ function drawHat(){
     img.src = document.getElementById("elegida").innerHTML;
 
     for (i = comp.length; i--; ) {
-        ctx.drawImage(img, comp[i].x, (comp[i].y - (comp[i].height * 0.9)), comp[i].width, comp[i].height);
+        ctx.drawImage(img, (comp[i].x - (comp[i].x * 0.50)), (comp[i].y - (comp[i].height * 1)), comp[i].width + 100 , comp[i].height + 20);
     }
 }
 
