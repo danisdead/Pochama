@@ -4,28 +4,69 @@ function cambiarImagen(numImg){
     var ruta, tipoImg;
     switch(imagen){
         case '1':
-            ruta = "facedet/glasses_original.png";
+            //ruta = "facedet/glasses_original.png";
+            ruta = "img/originales/ANTIFAZ.png";
             tipoImg = "cara";
             break;
         case '2':
-            ruta = "facedet/glasses2.png";
+            //ruta = "facedet/glasses2.png";
+            ruta = "img/originales/BUENMOZO.png";
             tipoImg = "cara";
             break;
         case '3':
-            ruta = "facedet/mono.png";
-            tipoImg = "cara";
+            //ruta = "facedet/mono.png";
+            ruta = "img/originales/SOMBRERO_CHARRO.png";
+            tipoImg = "sombrero";
             break;
         case '4':
-            ruta = "facedet/ojos.png";
-            tipoImg = "cara";
+            //ruta = "facedet/ojos.png";
+            ruta = "img/originales/SOMBRERO_IRISH.png";
+            tipoImg = "sombrero";
             break;
         case '5':
-            ruta = "facedet/hat.png";
+            //ruta = "facedet/hat.png";
+            ruta = "img/originales/VIKINGO.png";
             tipoImg = "sombrero";
             break;
         case '6':
-            ruta = "facedet/rayos.png";
+            //ruta = "facedet/rayos.png";
+            ruta = "img/fuego/fija_incendio.png";
             tipoImg = "imagen";
+            break;
+        case '7':
+            //ruta = "facedet/ojos.png";
+            ruta = "img/fuego/cara_fuegoboca.png";
+            tipoImg = "cara";
+            break;
+        case '8':
+            //ruta = "facedet/hat.png";
+            ruta = "img/fuego/sombrero_casco.png";
+            tipoImg = "sombrero";
+            break;
+        case '9':
+            //ruta = "facedet/rayos.png";
+            ruta = "img/fuego/sombrero_fuego.png";
+            tipoImg = "sombrero";
+            break;
+        case '10':
+            //ruta = "facedet/rayos.png";
+            ruta = "img/salsa_brava/ARABE.png";
+            tipoImg = "cara";
+            break;
+        case '11':
+            //ruta = "facedet/rayos.png";
+            ruta = "img/salsa_brava/BOCA.png";
+            tipoImg = "cara";
+            break;
+        case '12':
+            //ruta = "facedet/rayos.png";
+            ruta = "img/salsa_brava/GATO.png";
+            tipoImg = "cara";
+            break;
+        case '13':
+            //ruta = "facedet/rayos.png";
+            ruta = "img/salsa_brava/PERRO.png";
+            tipoImg = "cara";
             break;
     }
     document.getElementById("elegida").innerHTML = ruta;
