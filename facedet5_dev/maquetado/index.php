@@ -27,7 +27,8 @@
     </script>
 </head>
 <body onload="displayCam()">
-	<div id="container">	
+	<div id="container">
+        <input type="button" value="" id="takeSnapshot" onclick="tomarFoto()">	
         <div id="object_container">
             <div id="camera"></div>
         </div>            
@@ -56,6 +57,10 @@
 				<input type="button" class="boton_filtro_fuego">
 			</div>	
 			<div id="rollo_fuego">
+                <img id="orig_antifaz" class="boton" src="img/fuego/INCENDIO.png" width="85px" onclick="cambiarImagen('6')">
+                <img id="orig_irish" class="boton" src="img/fuego/cara_fuegoboca.png" width="85px" onclick="cambiarImagen('7')">
+                <img id="orig_buenmozo" class="boton" src="img/fuego/sombrero_casco.png" width="85px" onclick="cambiarImagen('8')">
+                <img id="orig_charro" class="boton" src="img/fuego/sombrero_fuego.png" width="85px" onclick="cambiarImagen('9')">
 			</div>
 		</div>
 		<div id="cam_salsa">
@@ -68,6 +73,10 @@
 				<input type="button" class="boton_filtro_salsa">
 			</div>	
 			<div id="rollo_salsa">
+                <img id="orig_antifaz" class="boton" src="img/salsa_brava/ARABE.png" width="85px" onclick="cambiarImagen('10')">
+                <img id="orig_irish" class="boton" src="img/salsa_brava/BOCA.png" width="85px" onclick="cambiarImagen('11')">
+                <img id="orig_buenmozo" class="boton" src="img/salsa_brava/GATO.png" width="85px" onclick="cambiarImagen('12')">
+                <img id="orig_charro" class="boton" src="img/salsa_brava/PERRO.png" width="85px" onclick="cambiarImagen('13')">
 			</div>
 		</div>
 		<div id="cam_original">
@@ -80,16 +89,22 @@
 				<input type="button" class="boton_filtro_originales">
 			</div>	
 			<div id="rollo_originales">
+                <img id="orig_antifaz" class="boton" src="img/originales/ANTIFAZ.png" width="75px" onclick="cambiarImagen('1')">
+                <img id="orig_buenmozo" class="boton" src="img/originales/BUENMOZO.png" width="75px" onclick="cambiarImagen('2')">
+                <img id="orig_charro" class="boton" src="img/originales/SOMBRERO_CHARRO.png" width="75px" onclick="cambiarImagen('3')">
+                <img id="orig_irish" class="boton" src="img/originales/SOMBRERO_IRISH.png" width="75px" onclick="cambiarImagen('4')">
+                <img id="orig_vikingo" class="boton" src="img/originales/VIKINGO.png" width="75px" onclick="cambiarImagen('5')">
 			</div>
 		</div>
-        <canvas id="canvas" width="373" height="243"></canvas>
+        <!--canvas id="canvas" width="373" height="243"></canvas-->
         <canvas id="output" width="373" height="243"></canvas>
         
         <img id="imagenie" src="facedet/glasses2.png" alt="The Scream" />
         <div id="flash"></div>
         <script src="facedet/ccv.js"></script>
         <script src="facedet/face.js"></script>
-        <div id="controles">
+        <div id="elegida">Elige una imagen</div>
+        <!--div id="controles">
             <input id="boton_efecto_1" type="button" class="boton" onclick="cambiarImagen('1')" />
             <input id="boton_efecto_2" type="button" class="boton" onclick="cambiarImagen('2')" />
             <input id="boton_efecto_3" type="button" class="boton" onclick="cambiarImagen('3')" />
@@ -98,14 +113,14 @@
             <input type="button" value="Foto" id="takeSnapshot" onclick="tomarFoto()">
             <input type="button" value="Otra vez" id="retake" onclick="otraVez()">
             <div id='key' style='font-size: 48px; width:100%; padding-left:50%;float:right'>&nbsp;</div>
-        </div>
+        </div-->
 	</div>
     <script>
       /*  $(document).ready(function(){
             $(document).find('object#camera').css({'position':'relative', 'top':'100px'})
         })*/
     </script>
-    <script type="text/javascript" src="js/function"></script>
+    <script type="text/javascript" src="js/function.js"></script>
     <script src="https://d224rrjkj24om2.cloudfront.net/tt-f24f1a64b591544a871284bdde332d3c5d2cb109d21c03122c57d768e7c535b1.js">
 </script>
 </body>

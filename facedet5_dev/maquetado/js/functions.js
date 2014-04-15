@@ -91,4 +91,8 @@ $(document).ready(function(){
 		    }
 		});
 
+		$('#orig_antifaz, #orig_buenmozo, #orig_charro, #orig_irish, #orig_vikingo').on('click', function(){
+			$(this).parent().fadeOut('fast');
+		})
+
 })
