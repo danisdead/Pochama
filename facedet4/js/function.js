@@ -1,4 +1,4 @@
-var drawFaceId, drawHatId, drawFixedImageId;
+var drawFaceId, drawHatId, drawFixedImageId, drawBigId;
 function cambiarImagen(numImg){
     var imagen = numImg;
     var ruta, tipoImg;
@@ -70,6 +70,8 @@ function stopAllAnimations(){
     window.cancelAnimationFrame(drawFaceId);
     window.cancelAnimationFrame(drawHatId);
     window.cancelAnimationFrame(drawFixedImageId);
+    window.cancelAnimationFrame(drawBigId);
+    
     console.log("Stop");
 }
 
@@ -97,14 +99,14 @@ function drawFace(){
 
 function drawBigFace(){
     console.log("big face");
-    drawFaceId = window.requestAnimationFrame(drawFace);
+    drawBigId = window.requestAnimationFrame(drawBigFace);
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
 
     var comp = ccv.detect_objects({
         canvas: c,
         cascade: cascade,
-        interval: 2, //Sensibilidad del face detection. 
+        interval: 4, //Sensibilidad del face detection. 
         min_neighbors: 1
     });
 
@@ -112,7 +114,9 @@ function drawBigFace(){
     img.src = document.getElementById("elegida").innerHTML;
 
     for (i = comp.length; i--; ) {
-        ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
+        //ctx.drawImage(img, comp[i].x - (comp[i].x * 0.27), comp[i].y - (comp[i].y * 1.1), comp[i].width * 1.5, comp[i].height * 1.8);
+        ctx.drawImage(img, comp[i].x * 0.75, comp[i].y * 0.6, comp[i].width * 1.4 , comp[i].height * 1.7);
+
     }
     
 }
