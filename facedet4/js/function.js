@@ -43,6 +43,10 @@ function cambiarImagen(numImg){
                 stopAllAnimations();
                 drawFixedImageIE();
                 break;
+            case "cara_grande":
+                stopAllAnimations();
+                drawBigFaceIE();
+                break;
         }
     } else {
         switch(tipoImg){
@@ -106,7 +110,7 @@ function drawBigFace(){
     var comp = ccv.detect_objects({
         canvas: c,
         cascade: cascade,
-        interval: 4, //Sensibilidad del face detection. 
+        interval: 2, //Sensibilidad del face detection. 
         min_neighbors: 1
     });
 
@@ -115,7 +119,7 @@ function drawBigFace(){
 
     for (i = comp.length; i--; ) {
         //ctx.drawImage(img, comp[i].x - (comp[i].x * 0.27), comp[i].y - (comp[i].y * 1.1), comp[i].width * 1.5, comp[i].height * 1.8);
-        ctx.drawImage(img, comp[i].x * 0.75, comp[i].y * 0.6, comp[i].width * 1.4 , comp[i].height * 1.7);
+        ctx.drawImage(img, comp[i].x * 0.75, comp[i].y * 0.4, comp[i].width * 1.4 , comp[i].height * 1.7);
 
     }
     
@@ -166,6 +170,20 @@ function drawFaceIE(){
     document.getElementById('imagenie').src = img.src;
 }
 
+function drawBigFaceIE(){
+    console.log("b face ie");
+    var c=document.getElementById("canvas");
+    var ctx=c.getContext("2d");
+    var img = new Image();
+    img.src = document.getElementById("elegida").innerHTML;
+    document.getElementById('imagenie').style.display = "inline";
+    document.getElementById('imagenie').style.top = "15px";
+    document.getElementById('imagenie').style.left = "75px";
+    document.getElementById('imagenie').style.width = "200px";
+    document.getElementById('imagenie').style.height = "200px";
+    document.getElementById('imagenie').src = img.src;
+}
+
 function drawHatIE(){
     console.log("hat ie");
     var c=document.getElementById("canvas");
@@ -174,9 +192,9 @@ function drawHatIE(){
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
     document.getElementById('imagenie').style.top = "0px";
-    document.getElementById('imagenie').style.left = "120px";
-    document.getElementById('imagenie').style.width = "120px";
-    document.getElementById('imagenie').style.height = "100px";
+    document.getElementById('imagenie').style.left = "90px";
+    document.getElementById('imagenie').style.width = "200px";
+    document.getElementById('imagenie').style.height = "130px";
     document.getElementById('imagenie').src = img.src;
 }
 
