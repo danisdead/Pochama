@@ -12,10 +12,11 @@
     <script type="text/javascript" src="js/keypad.js" ></script>
     <script type="text/javascript" src="js/sylvester.js" ></script>
     <script type="text/javascript" src="js/cam.js"></script>
-        <script>
+    <script>
     $(document).ready(function(){
         $("#flash").css('visibility', 'hidden');
         $('.container').on('click', '#takeSnapshot', function() { 
+            console.log("click flash");
             $("#flash").fadeIn(500);
             $("#flash").css('visibility', 'visible');
             $("#flash").fadeOut(500, function(){
@@ -36,7 +37,8 @@
                 <canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
         </div>
 		<div id="cam_neut">
-
+            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
+        
 			<div class="cont_botones">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -57,10 +59,10 @@
 				<input type="button" class="boton_filtro_fuego">
 			</div>	
 			<div id="rollo_fuego">
-                <img id="orig_antifaz" class="boton" src="img/fuego/INCENDIO.png" width="85px" onclick="cambiarImagen('6')">
+                <img id="orig_antifaz" class="boton" src="img/fuego/fija_incendio.png" width="85px" onclick="cambiarImagen('6')">
                 <img id="orig_irish" class="boton" src="img/fuego/cara_fuegoboca.png" width="85px" onclick="cambiarImagen('7')">
-                <img id="orig_buenmozo" class="boton" src="img/fuego/sombrero_casco.png" width="85px" onclick="cambiarImagen('8')">
-                <img id="orig_charro" class="boton" src="img/fuego/sombrero_fuego.png" width="85px" onclick="cambiarImagen('9')">
+                <img id="orig_buenmozo" class="boton" src="img/fuego/sombrero_1.png" width="85px" onclick="cambiarImagen('8')">
+                <img id="orig_charro" class="boton" src="img/fuego/sombrero_2.png" width="85px" onclick="cambiarImagen('9')">
 			</div>
 		</div>
 		<div id="cam_salsa">
@@ -73,10 +75,10 @@
 				<input type="button" class="boton_filtro_salsa">
 			</div>	
 			<div id="rollo_salsa">
-                <img id="orig_antifaz" class="boton" src="img/salsa_brava/ARABE.png" width="85px" onclick="cambiarImagen('10')">
-                <img id="orig_irish" class="boton" src="img/salsa_brava/BOCA.png" width="85px" onclick="cambiarImagen('11')">
-                <img id="orig_buenmozo" class="boton" src="img/salsa_brava/GATO.png" width="85px" onclick="cambiarImagen('12')">
-                <img id="orig_charro" class="boton" src="img/salsa_brava/PERRO.png" width="85px" onclick="cambiarImagen('13')">
+                <img id="orig_antifaz" class="boton" src="img/salsa_brava/cara_grande_arabe.png" width="85px" onclick="cambiarImagen('10')">
+                <img id="orig_irish" class="boton" src="img/salsa_brava/cara_boca.png" width="85px" onclick="cambiarImagen('11')">
+                <img id="orig_buenmozo" class="boton" src="img/salsa_brava/cara_grande_gato.png" width="85px" onclick="cambiarImagen('12')">
+                <img id="orig_charro" class="boton" src="img/salsa_brava/cara_grande_perro.png" width="85px" onclick="cambiarImagen('13')">
 			</div>
 		</div>
 		<div id="cam_original">
@@ -89,11 +91,11 @@
 				<input type="button" class="boton_filtro_originales">
 			</div>	
 			<div id="rollo_originales">
-                <img id="orig_antifaz" class="boton" src="img/originales/ANTIFAZ.png" width="75px" onclick="cambiarImagen('1')">
-                <img id="orig_buenmozo" class="boton" src="img/originales/BUENMOZO.png" width="75px" onclick="cambiarImagen('2')">
-                <img id="orig_charro" class="boton" src="img/originales/SOMBRERO_CHARRO.png" width="75px" onclick="cambiarImagen('3')">
-                <img id="orig_irish" class="boton" src="img/originales/SOMBRERO_IRISH.png" width="75px" onclick="cambiarImagen('4')">
-                <img id="orig_vikingo" class="boton" src="img/originales/VIKINGO.png" width="75px" onclick="cambiarImagen('5')">
+                <img id="orig_antifaz" class="boton" src="img/originales/cara_lentes.png" width="75px" onclick="cambiarImagen('1')">
+                <img id="orig_buenmozo" class="boton" src="img/originales/cara_grande_likeasir.png" width="75px" onclick="cambiarImagen('2')">
+                <img id="orig_charro" class="boton" src="img/originales/sombrero_charro.png" width="75px" onclick="cambiarImagen('3')">
+                <img id="orig_irish" class="boton" src="img/originales/sombrero_trebol.png" width="75px" onclick="cambiarImagen('4')">
+                <img id="orig_vikingo" class="boton" src="img/originales/sombrero_vikingo.png" width="75px" onclick="cambiarImagen('5')">
 			</div>
 		</div>
         <!--canvas id="canvas" width="373" height="243"></canvas-->
