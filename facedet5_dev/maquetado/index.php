@@ -12,10 +12,11 @@
     <script type="text/javascript" src="js/keypad.js" ></script>
     <script type="text/javascript" src="js/sylvester.js" ></script>
     <script type="text/javascript" src="js/cam.js"></script>
-        <script>
+    <script>
     $(document).ready(function(){
         $("#flash").css('visibility', 'hidden');
         $('.container').on('click', '#takeSnapshot', function() { 
+            console.log("click flash");
             $("#flash").fadeIn(500);
             $("#flash").css('visibility', 'visible');
             $("#flash").fadeOut(500, function(){
@@ -36,7 +37,8 @@
                 <canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
         </div>
 		<div id="cam_neut">
-
+            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
+        
 			<div class="cont_botones">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -48,7 +50,7 @@
 			<!--div id="content_canvas" style="position: relative; display:none; top: 206px; left: 173px; z-index: -1; width: 418px; float: left;">
 				<canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
 			</div-->
-            			<div class="cont_botones_fuego">
+            <div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
 				<input class="takis_original" type="button" value="">
