@@ -81,8 +81,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	position: relative;
 	top: 530px;
 	float: left;
-	/*left: 309px;*/
-	right: 108px;
+	left: 309px;
 }
 
 .boton_filtro_fuego, .boton_filtro_salsa, .boton_filtro_originales{
@@ -98,11 +97,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	width: 591px;
 	height: 205px;
 	position: relative;
-	/*top: 324px;
-	right: 100px;*/
+	top: 324px;
+	right: 100px;
 	opacity: .9;
 	float: left;
-	left: 52px;
+	/*left: 52px;*/
 }
 
 #rollo_fuego{
