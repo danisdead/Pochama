@@ -107,6 +107,7 @@
         <script src="facedet/face.js"></script>
         <div id="elegida">Elige una imagen</div>
 	</div>
+    <!--<img src="" id="foto_guardar" style="width:100px;height:100px;"/>-->
     <script>
     </script>
     <script type="text/javascript" src="js/function.js"></script>

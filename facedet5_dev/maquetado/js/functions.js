@@ -12,6 +12,7 @@ $(document).ready(function(){
 					/*$('#cam_fuego').fadeIn('slow');*/
 					$('#content_canvas').show();
 			});
+			document.getElementById('imagenie').style.display = "none";
 
 		})
 
@@ -21,7 +22,7 @@ $(document).ready(function(){
 			$(div).fadeOut('slow', function(){
 					$('#cam_salsa').fadeIn('slow');	
 			});
-
+			document.getElementById('imagenie').style.display = "none";
 		})
 
 		$('input.takis_original').on('click', function(){
@@ -30,6 +31,7 @@ $(document).ready(function(){
 			$(div).fadeOut('slow', function(){
 						$('#cam_original').fadeIn('slow');	
 			});
+			document.getElementById('imagenie').style.display = "none";
 
 		});
 

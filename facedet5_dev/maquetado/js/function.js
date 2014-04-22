@@ -226,8 +226,15 @@ function drawFixedImageIE(){
     document.getElementById('imagenie').style.left = "475px";
     document.getElementById('imagenie').style.width = "373px";
     document.getElementById('imagenie').style.height = "243px";
-    /*document.getElementById('controles').style.top = "-710px";*/
     document.getElementById('imagenie').src = img.src;
+
+
+    /*drawFixedImageId = window.requestAnimationFrame(drawFixedImage);
+    var c = document.getElementById("canvas");
+    var ctx = c.getContext("2d");
+    var img = new Image();
+    img.src = document.getElementById("elegida").innerHTML;
+    ctx.drawImage(img, 0, 0, c.width, c.height);*/
 }
 
 function tomarFoto(){
@@ -236,6 +243,14 @@ function tomarFoto(){
     var source = document.getElementById('canvas');
     ctx.drawImage(source, 0, 0);
     document.getElementById('output').style.visibility = "visible";
+
+    var img    = output.toDataURL("image/png");
+    window.open(img, "toDataUrl() image", "width=600, height=600");
+
+    /*var img = new Image();
+    img.src = document.getElementById("elegida").innerHTML;
+    ctx.drawImage(img, (295, 475, 373 , 243);*/
+    
 }
 
 function otraVez(){
