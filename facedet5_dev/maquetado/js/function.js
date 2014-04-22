@@ -62,9 +62,7 @@ function cambiarImagen(numImg){
             break;
     }
     document.getElementById("elegida").innerHTML = ruta;
-    if (navigator.appName == "Microsoft Internet Explorer") {
-        console.log(ruta);
-         switch(tipoImg){
+        switch(tipoImg){
             case "cara":
                 stopAllAnimations();
                 drawFaceIE();
@@ -82,26 +80,6 @@ function cambiarImagen(numImg){
                 drawBigFaceIE();
                 break;
         }
-    } else {
-        switch(tipoImg){
-            case "cara":
-                stopAllAnimations();
-                drawFace();
-                break;
-            case "sombrero":
-                stopAllAnimations();
-                drawHat();
-                break;
-            case "imagen":
-                stopAllAnimations();
-                drawFixedImage();
-                break;
-            case "cara_grande":
-                stopAllAnimations();
-                drawBigFace();
-                break;
-        }
-    }
 }
 
 function stopAllAnimations(){
@@ -121,7 +99,7 @@ function drawFace(){
     var comp = ccv.detect_objects({
         canvas: c,
         cascade: cascade,
-        interval: 2, //Sensibilidad del face detection. 
+        interval: 5, //Sensibilidad del face detection. 
         min_neighbors: 1
     });
 
@@ -144,7 +122,7 @@ function drawBigFace(){
     var comp = ccv.detect_objects({
         canvas: c,
         cascade: cascade,
-        interval: 2, //Sensibilidad del face detection. 
+        interval: 5, //Sensibilidad del face detection. 
         min_neighbors: 1
     });
 
@@ -168,7 +146,7 @@ function drawHat(){
     var comp = ccv.detect_objects({
         canvas: c,
         cascade: cascade,
-        interval: 1,
+        interval: 5,
         min_neighbors: 1
     });
 
