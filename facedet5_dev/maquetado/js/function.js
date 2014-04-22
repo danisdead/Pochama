@@ -1,72 +1,64 @@
-var drawFaceId, drawHatId, drawFixedImageId;
+var drawFaceId, drawHatId, drawFixedImageId, drawBigId;;
 function cambiarImagen(numImg){
     var imagen = numImg;
     var ruta, tipoImg;
     switch(imagen){
+
+
         case '1':
-            //ruta = "facedet/glasses_original.png";
-            ruta = "img/originales/ANTIFAZ.png";
+            ruta = "img/originales/cara_lentes.png";
             tipoImg = "cara";
             break;
         case '2':
-            //ruta = "facedet/glasses2.png";
-            ruta = "img/originales/BUENMOZO.png";
-            tipoImg = "cara";
+            ruta = "img/originales/cara_grande_likeasir.png";
+            tipoImg = "cara_grande";
             break;
         case '3':
-            //ruta = "facedet/mono.png";
-            ruta = "img/originales/SOMBRERO_CHARRO.png";
+            ruta = "img/originales/sombrero_charro.png";
             tipoImg = "sombrero";
             break;
         case '4':
-            //ruta = "facedet/ojos.png";
-            ruta = "img/originales/SOMBRERO_IRISH.png";
+            ruta = "img/originales/sombrero_trebol.png";
             tipoImg = "sombrero";
             break;
         case '5':
-            //ruta = "facedet/hat.png";
-            ruta = "img/originales/VIKINGO.png";
+            ruta = "img/originales/sombrero_vikingo.png";
             tipoImg = "sombrero";
             break;
         case '6':
-            //ruta = "facedet/rayos.png";
             ruta = "img/fuego/fija_incendio.png";
             tipoImg = "imagen";
             break;
         case '7':
-            //ruta = "facedet/ojos.png";
             ruta = "img/fuego/cara_fuegoboca.png";
             tipoImg = "cara";
             break;
         case '8':
-            //ruta = "facedet/hat.png";
-            ruta = "img/fuego/sombrero_casco.png";
+            ruta = "img/fuego/sombrero_1.png";
             tipoImg = "sombrero";
             break;
         case '9':
-            //ruta = "facedet/rayos.png";
-            ruta = "img/fuego/sombrero_fuego.png";
+            ruta = "img/fuego/sombrero_2.png";
             tipoImg = "sombrero";
             break;
         case '10':
-            //ruta = "facedet/rayos.png";
-            ruta = "img/salsa_brava/ARABE.png";
-            tipoImg = "cara";
+            ruta = "img/salsa_brava/cara_grande_arabe.png";
+            tipoImg = "cara_grande";
             break;
         case '11':
             //ruta = "facedet/rayos.png";
-            ruta = "img/salsa_brava/BOCA.png";
+            ruta = "img/salsa_brava/cara_boca.png";
             tipoImg = "cara";
             break;
         case '12':
             //ruta = "facedet/rayos.png";
-            ruta = "img/salsa_brava/GATO.png";
-            tipoImg = "cara";
+            ruta = "img/salsa_brava/cara_grande_gato.png";
+            tipoImg = "cara_grande";
             break;
         case '13':
             //ruta = "facedet/rayos.png";
-            ruta = "img/salsa_brava/PERRO.png";
-            tipoImg = "cara";
+            ruta = "img/salsa_brava/cara_grande_perro.png";
+            tipoImg = "cara_grande";
             break;
     }
     document.getElementById("elegida").innerHTML = ruta;
@@ -84,6 +76,10 @@ function cambiarImagen(numImg){
                 stopAllAnimations();
                 drawFixedImageIE();
                 break;
+            case "cara_grande":
+                stopAllAnimations();
+                drawBigFaceIE();
+                break;
         }
     } else {
         switch(tipoImg){
@@ -99,6 +95,10 @@ function cambiarImagen(numImg){
                 stopAllAnimations();
                 drawFixedImage();
                 break;
+            case "cara_grande":
+                stopAllAnimations();
+                drawBigFace();
+                break;
         }
     }
 }
@@ -107,6 +107,7 @@ function stopAllAnimations(){
     window.cancelAnimationFrame(drawFaceId);
     window.cancelAnimationFrame(drawHatId);
     window.cancelAnimationFrame(drawFixedImageId);
+    window.cancelAnimationFrame(drawBigId);
     console.log("Stop");
 }
 
@@ -127,7 +128,32 @@ function drawFace(){
     img.src = document.getElementById("elegida").innerHTML;
 
     for (i = comp.length; i--; ) {
-        ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
+        //ctx.drawImage(img, comp[i].x, comp[i].y, comp[i].width, comp[i].height);
+        ctx.drawImage(img, comp[i].x, comp[i].y + (comp[i].y * 0.15), comp[i].width, comp[i].height);
+    }
+    
+}
+
+function drawBigFace(){
+    console.log("big face");
+    drawBigId = window.requestAnimationFrame(drawBigFace);
+    var c = document.getElementById("canvas");
+    var ctx = c.getContext("2d");
+
+    var comp = ccv.detect_objects({
+        canvas: c,
+        cascade: cascade,
+        interval: 2, //Sensibilidad del face detection. 
+        min_neighbors: 1
+    });
+
+    var img = new Image();
+    img.src = document.getElementById("elegida").innerHTML;
+
+    for (i = comp.length; i--; ) {
+        //ctx.drawImage(img, comp[i].x - (comp[i].x * 0.27), comp[i].y - (comp[i].y * 1.1), comp[i].width * 1.5, comp[i].height * 1.8);
+        ctx.drawImage(img, comp[i].x * 0.75, comp[i].y * 0.4, comp[i].width * 1.4 , comp[i].height * 1.7);
+
     }
     
 }
@@ -149,7 +175,8 @@ function drawHat(){
     img.src = document.getElementById("elegida").innerHTML;
 
     for (i = comp.length; i--; ) {
-        ctx.drawImage(img, comp[i].x, (comp[i].y - (comp[i].height * 0.9)), comp[i].width, comp[i].height);
+        //ctx.drawImage(img, comp[i].x, (comp[i].y - (comp[i].height * 0.9)), comp[i].width, comp[i].height);
+        ctx.drawImage(img, (comp[i].x - (comp[i].x * 0.50)), (comp[i].y - (comp[i].height * 1)), comp[i].width + 100 , comp[i].height + 20);
     }
 }
 
@@ -177,6 +204,20 @@ function drawFaceIE(){
     document.getElementById('imagenie').src = img.src;
 }
 
+function drawBigFaceIE(){
+    console.log("b face ie");
+    var c=document.getElementById("canvas");
+    var ctx=c.getContext("2d");
+    var img = new Image();
+    img.src = document.getElementById("elegida").innerHTML;
+    document.getElementById('imagenie').style.display = "inline";
+    document.getElementById('imagenie').style.top = "15px";
+    document.getElementById('imagenie').style.left = "75px";
+    document.getElementById('imagenie').style.width = "200px";
+    document.getElementById('imagenie').style.height = "200px";
+    document.getElementById('imagenie').src = img.src;
+}
+
 function drawHatIE(){
     console.log("hat ie");
     var c=document.getElementById("canvas");
@@ -184,10 +225,14 @@ function drawHatIE(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "0px";
+    /*document.getElementById('imagenie').style.top = "0px";
     document.getElementById('imagenie').style.left = "120px";
     document.getElementById('imagenie').style.width = "120px";
-    document.getElementById('imagenie').style.height = "100px";
+    document.getElementById('imagenie').style.height = "100px";*/
+    document.getElementById('imagenie').style.top = "0px";
+    document.getElementById('imagenie').style.left = "90px";
+    document.getElementById('imagenie').style.width = "200px";
+    document.getElementById('imagenie').style.height = "130px";
     document.getElementById('imagenie').src = img.src;
 }
 
