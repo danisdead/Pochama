@@ -41,6 +41,7 @@ $(document).ready(function(){
 		   clickearlo muestre u oculte los rollos para su respectiva cámara*/
 
 		$('input.boton_filtro_fuego').on('click', function(){
+			$('#retake').hide();
 
 			if($('div#rollo_fuego').is(':visible')){
 				$('div#rollo_fuego').fadeOut('fast');
@@ -52,6 +53,7 @@ $(document).ready(function(){
 		});
 
 		$('input.boton_filtro_salsa').on('click', function(){
+			$('#retake').hide();
 
 			if($('div#rollo_salsa').is(':visible')){
 				$('div#rollo_salsa').fadeOut('fast');
@@ -62,6 +64,7 @@ $(document).ready(function(){
 		});
 
 		$('input.boton_filtro_originales').on('click', function(){
+			$('#retake').hide();
 
 			if($('div#rollo_originales').is(':visible')){
 				$('div#rollo_originales').fadeOut('fast');
@@ -82,17 +85,21 @@ $(document).ready(function(){
 
 		    if (!container.is(e.target) && container.has(e.target).length === 0){
 		        container.fadeOut('fast');
+		        $('#retake').show();
 		    }
 		    if (!container_salsa.is(e.target) && container_salsa.has(e.target).length === 0){
 		        container_salsa.fadeOut('fast');
+		        $('#retake').show();
 		    }
 		    if (!container_original.is(e.target) && container_original.has(e.target).length === 0){
 		        container_original.fadeOut('fast');
+		        $('#retake').show();
 		    }
 		});
 
 		$('#orig_antifaz, #orig_buenmozo, #orig_charro, #orig_irish, #orig_vikingo').on('click', function(){
 			$(this).parent().fadeOut('fast');
+			$('#retake').show();
 		})
 
 })

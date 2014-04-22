@@ -45,7 +45,7 @@
 			</div>
 		</div>
 		<div id="cam_fuego_div">
-            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
+            
             <div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -60,9 +60,10 @@
                 <img id="orig_buenmozo" class="boton" src="img/fuego/sombrero_1.png" width="85px" onclick="cambiarImagen('8')">
                 <img id="orig_charro" class="boton" src="img/fuego/sombrero_2.png" width="85px" onclick="cambiarImagen('9')">
 			</div>
+            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
 		</div>
 		<div id="cam_salsa">
-            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
+            
 			<div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -77,9 +78,10 @@
                 <img id="orig_buenmozo" class="boton" src="img/salsa_brava/cara_grande_gato.png" width="85px" onclick="cambiarImagen('12')">
                 <img id="orig_charro" class="boton" src="img/salsa_brava/cara_grande_perro.png" width="85px" onclick="cambiarImagen('13')">
 			</div>
+            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
 		</div>
 		<div id="cam_original">
-            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
+            
 			<div class="cont_botones">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -95,6 +97,7 @@
                 <img id="orig_irish" class="boton" src="img/originales/sombrero_trebol.png" width="75px" onclick="cambiarImagen('4')">
                 <img id="orig_vikingo" class="boton" src="img/originales/sombrero_vikingo.png" width="75px" onclick="cambiarImagen('5')">
 			</div>
+            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
 		</div>
         <canvas id="output" width="373" height="243"></canvas>
         
