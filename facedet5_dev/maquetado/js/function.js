@@ -63,6 +63,7 @@ function cambiarImagen(numImg){
     }
     document.getElementById("elegida").innerHTML = ruta;
     if (navigator.appName == "Microsoft Internet Explorer") {
+        console.log(ruta);
          switch(tipoImg){
             case "cara":
                 stopAllAnimations();
@@ -197,8 +198,8 @@ function drawFaceIE(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "52px";
-    document.getElementById('imagenie').style.left = "103px";
+    document.getElementById('imagenie').style.top = "330px";
+    document.getElementById('imagenie').style.left = "570px";
     document.getElementById('imagenie').style.width = "150px";
     document.getElementById('imagenie').style.height = "150px";
     document.getElementById('imagenie').src = img.src;
@@ -211,8 +212,8 @@ function drawBigFaceIE(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "15px";
-    document.getElementById('imagenie').style.left = "75px";
+    document.getElementById('imagenie').style.top = "300px";
+    document.getElementById('imagenie').style.left = "530px";
     document.getElementById('imagenie').style.width = "200px";
     document.getElementById('imagenie').style.height = "200px";
     document.getElementById('imagenie').src = img.src;
@@ -229,8 +230,8 @@ function drawHatIE(){
     document.getElementById('imagenie').style.left = "120px";
     document.getElementById('imagenie').style.width = "120px";
     document.getElementById('imagenie').style.height = "100px";*/
-    document.getElementById('imagenie').style.top = "0px";
-    document.getElementById('imagenie').style.left = "90px";
+    document.getElementById('imagenie').style.top = "270px";
+    document.getElementById('imagenie').style.left = "570px";
     document.getElementById('imagenie').style.width = "200px";
     document.getElementById('imagenie').style.height = "130px";
     document.getElementById('imagenie').src = img.src;
@@ -243,11 +244,11 @@ function drawFixedImageIE(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "0px";
-    document.getElementById('imagenie').style.left = "0px";
+    document.getElementById('imagenie').style.top = "295px";
+    document.getElementById('imagenie').style.left = "475px";
     document.getElementById('imagenie').style.width = "373px";
     document.getElementById('imagenie').style.height = "243px";
-    document.getElementById('controles').style.top = "-710px";
+    /*document.getElementById('controles').style.top = "-710px";*/
     document.getElementById('imagenie').src = img.src;
 }
 
