@@ -152,8 +152,8 @@ function drawBigFace(){
 
     for (i = comp.length; i--; ) {
         //ctx.drawImage(img, comp[i].x - (comp[i].x * 0.27), comp[i].y - (comp[i].y * 1.1), comp[i].width * 1.5, comp[i].height * 1.8);
-        ctx.drawImage(img, comp[i].x * 0.75, comp[i].y * 0.4, comp[i].width * 1.4 , comp[i].height * 1.7);
-
+        //ctx.drawImage(img, comp[i].x * 0.75, comp[i].y * 0.4, comp[i].width * 1.4 , comp[i].height * 1.7);
+        ctx.drawImage(img, comp[i].x * 0.75, comp[i].y * 0.5, comp[i].width * 1.4 , comp[i].height * 1.7);
     }
     
 }
