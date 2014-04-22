@@ -37,7 +37,6 @@
                 <canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
         </div>
 		<div id="cam_neut">
-            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
         
 			<div class="cont_botones">
 				<input class="takis_fuego" type="button" value="">
@@ -50,6 +49,7 @@
 			<!--div id="content_canvas" style="position: relative; display:none; top: 206px; left: 173px; z-index: -1; width: 418px; float: left;">
 				<canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
 			</div-->
+            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
             <div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -66,6 +66,7 @@
 			</div>
 		</div>
 		<div id="cam_salsa">
+            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
 			<div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -82,6 +83,7 @@
 			</div>
 		</div>
 		<div id="cam_original">
+            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
 			<div class="cont_botones">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
