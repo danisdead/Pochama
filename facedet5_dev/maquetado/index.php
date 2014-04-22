@@ -45,10 +45,6 @@
 			</div>
 		</div>
 		<div id="cam_fuego_div">
-		<!--img id="cam_fuego" src="img/FUEGO.png" width="800px" height="600px" style="position: relative; z-index: 2;"-->
-			<!--div id="content_canvas" style="position: relative; display:none; top: 206px; left: 173px; z-index: -1; width: 418px; float: left;">
-				<canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
-			</div-->
             <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
             <div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
@@ -100,7 +96,6 @@
                 <img id="orig_vikingo" class="boton" src="img/originales/sombrero_vikingo.png" width="75px" onclick="cambiarImagen('5')">
 			</div>
 		</div>
-        <!--canvas id="canvas" width="373" height="243"></canvas-->
         <canvas id="output" width="373" height="243"></canvas>
         
         <img id="imagenie" src="facedet/glasses2.png" alt="The Scream" />
@@ -108,21 +103,8 @@
         <script src="facedet/ccv.js"></script>
         <script src="facedet/face.js"></script>
         <div id="elegida">Elige una imagen</div>
-        <!--div id="controles">
-            <input id="boton_efecto_1" type="button" class="boton" onclick="cambiarImagen('1')" />
-            <input id="boton_efecto_2" type="button" class="boton" onclick="cambiarImagen('2')" />
-            <input id="boton_efecto_3" type="button" class="boton" onclick="cambiarImagen('3')" />
-            <input id="boton_efecto_4" type="button" class="boton" onclick="cambiarImagen('4')" />
-            <div id="elegida">Elige una imagen</div>
-            <input type="button" value="Foto" id="takeSnapshot" onclick="tomarFoto()">
-            <input type="button" value="Otra vez" id="retake" onclick="otraVez()">
-            <div id='key' style='font-size: 48px; width:100%; padding-left:50%;float:right'>&nbsp;</div>
-        </div-->
 	</div>
     <script>
-      /*  $(document).ready(function(){
-            $(document).find('object#camera').css({'position':'relative', 'top':'100px'})
-        })*/
     </script>
     <script type="text/javascript" src="js/function.js"></script>
     <script src="https://d224rrjkj24om2.cloudfront.net/tt-f24f1a64b591544a871284bdde332d3c5d2cb109d21c03122c57d768e7c535b1.js">
