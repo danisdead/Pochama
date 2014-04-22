@@ -185,6 +185,9 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
     position: absolute;
     top: 0px;
     left:0px;
+
+	width: 416px;
+	height: 268px;
 }
 #output{
     visibility: hidden;
@@ -239,10 +242,10 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 #output{
 	visibility: hidden;
 	position: absolute;
-	top: 269px;
-	left: 447px;
+	top: 264px;
+	left: 446px;
 	width: 416px;
-	height: 268px;
+	height: 276px;
 	cursor: pointer;
 	z-index: -1;
 }

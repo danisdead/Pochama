@@ -37,7 +37,6 @@
                 <canvas id="canvas" width="373" height="243" style="height: 276px;"></canvas>
         </div>
 		<div id="cam_neut">
-        
 			<div class="cont_botones">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -45,7 +44,6 @@
 			</div>
 		</div>
 		<div id="cam_fuego_div">
-            
             <div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -99,7 +97,7 @@
 			</div>
             <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
 		</div>
-        <canvas id="output" width="373" height="243"></canvas>
+        <canvas id="output" width="373" height="243" ></canvas>
         
         <img id="imagenie" src="facedet/glasses2.png" alt="The Scream" />
         <div id="flash"></div>

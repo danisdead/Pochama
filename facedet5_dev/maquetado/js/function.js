@@ -209,7 +209,7 @@ function drawHatIE(){
     document.getElementById('imagenie').style.width = "120px";
     document.getElementById('imagenie').style.height = "100px";*/
     document.getElementById('imagenie').style.top = "270px";
-    document.getElementById('imagenie').style.left = "570px";
+    document.getElementById('imagenie').style.left = "550px";
     document.getElementById('imagenie').style.width = "200px";
     document.getElementById('imagenie').style.height = "130px";
     document.getElementById('imagenie').src = img.src;
@@ -244,10 +244,10 @@ function tomarFoto(){
     ctx.drawImage(source, 0, 0);
     document.getElementById('output').style.visibility = "visible";
 
-    var img    = output.toDataURL("image/png");
+    /*var img    = output.toDataURL("image/png");
     window.open(img, "toDataUrl() image", "width=600, height=600");
 
-    /*var img = new Image();
+    var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     ctx.drawImage(img, (295, 475, 373 , 243);*/
     
