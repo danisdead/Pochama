@@ -79,7 +79,8 @@
 	position: relative;
 	top: 530px;
 	float: left;
-	left: 309px;
+	/*left: 309px;*/
+	right: 108px;
 }
 
 .boton_filtro_fuego, .boton_filtro_salsa, .boton_filtro_originales{
@@ -95,10 +96,11 @@
 	width: 591px;
 	height: 205px;
 	position: relative;
-	top: 324px;
-	right: 100px;
+	/*top: 324px;
+	right: 100px;*/
 	opacity: .9;
 	float: left;
+	left: 52px;
 }
 
 #rollo_fuego{
