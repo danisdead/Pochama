@@ -125,6 +125,9 @@
         <script src="facedet/ccv.js"></script>
         <script src="facedet/face.js"></script>
         <div id="elegida">Elige una imagen</div>
+        <input type="button" class="instr_Overlay" value="?" >
+        <div id="instruccionesOverlay">
+        </div>
 	</div>
     <!--<img src="" id="foto_guardar" style="width:100px;height:100px;"/>-->
     <script>
@@ -132,9 +135,8 @@
     <script type="text/javascript" src="js/function.js"></script>
     <script src="https://d224rrjkj24om2.cloudfront.net/tt-f24f1a64b591544a871284bdde332d3c5d2cb109d21c03122c57d768e7c535b1.js">
 </script>
-<input type="button" class="instr_Overlay" value="?" />
-<div id="instruccionesOverlay">
-</div>
+
+
 
 </body>
 </html>

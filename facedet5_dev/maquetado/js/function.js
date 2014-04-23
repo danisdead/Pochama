@@ -176,10 +176,10 @@ function drawFaceIE(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "330px";
-    document.getElementById('imagenie').style.left = "570px";
-    document.getElementById('imagenie').style.width = "150px";
-    document.getElementById('imagenie').style.height = "150px";
+    document.getElementById('imagenie').style.top = "-442px";
+    document.getElementById('imagenie').style.left = "-124px";
+    document.getElementById('imagenie').style.width = "178px";
+    document.getElementById('imagenie').style.height = "170px";
     document.getElementById('imagenie').src = img.src;
 }
 
@@ -190,8 +190,8 @@ function drawBigFaceIE(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "300px";
-    document.getElementById('imagenie').style.left = "530px";
+    document.getElementById('imagenie').style.top = "-438px";
+    document.getElementById('imagenie').style.left = "-161px";
     document.getElementById('imagenie').style.width = "200px";
     document.getElementById('imagenie').style.height = "200px";
     document.getElementById('imagenie').src = img.src;
@@ -204,12 +204,8 @@ function drawHatIE(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
-    /*document.getElementById('imagenie').style.top = "0px";
-    document.getElementById('imagenie').style.left = "120px";
-    document.getElementById('imagenie').style.width = "120px";
-    document.getElementById('imagenie').style.height = "100px";*/
-    document.getElementById('imagenie').style.top = "270px";
-    document.getElementById('imagenie').style.left = "550px";
+    document.getElementById('imagenie').style.top = "-532px";
+    document.getElementById('imagenie').style.left = "-138px";
     document.getElementById('imagenie').style.width = "200px";
     document.getElementById('imagenie').style.height = "130px";
     document.getElementById('imagenie').src = img.src;
@@ -222,12 +218,11 @@ function drawFixedImageIE(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "295px";
-    document.getElementById('imagenie').style.left = "475px";
+    document.getElementById('imagenie').style.top = "-398px";
+    document.getElementById('imagenie').style.left = "-222px";
     document.getElementById('imagenie').style.width = "373px";
     document.getElementById('imagenie').style.height = "243px";
     document.getElementById('imagenie').src = img.src;
-
 
     /*drawFixedImageId = window.requestAnimationFrame(drawFixedImage);
     var c = document.getElementById("canvas");
