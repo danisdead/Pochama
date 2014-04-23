@@ -133,10 +133,28 @@
     <script>
     </script>
     <script type="text/javascript" src="js/function.js"></script>
+    <script type="text/javascript" src="js/html2canvas.js"></script>
     <script src="https://d224rrjkj24om2.cloudfront.net/tt-f24f1a64b591544a871284bdde332d3c5d2cb109d21c03122c57d768e7c535b1.js">
 </script>
+<script type="text/javascript">
 
 
+function capture(){
+    html2canvas(document.body, {
+  onrendered: function(canvas) {
+    //document.body.appendChild(canvas);
+
+    var img = canvas.toDataURL("image/png");
+    window.open(img, "toDataUrl() image", "width=600, height=600");
+
+
+  },
+  width: 1080,
+  height: 620
+});
+}
+
+</script>
 
 </body>
 </html>
