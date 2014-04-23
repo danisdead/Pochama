@@ -41,7 +41,6 @@ $(document).ready(function(){
 
 		/* Funciones para hacer funcionar el botón de los filtos de forma que al
 		   clickearlo muestre u oculte los rollos para su respectiva cámara*/
-
 		$('input.boton_filtro_fuego').on('click', function(){
 			$('#retake').hide();
 
@@ -50,8 +49,6 @@ $(document).ready(function(){
 			}else{
 				$('div#rollo_fuego').fadeIn('fast');
 			}
-			
-
 		});
 
 		$('input.boton_filtro_salsa').on('click', function(){
@@ -111,8 +108,6 @@ $(document).ready(function(){
 		$('.instr_Overlay').on('click', function(){
 			console.log();
 			$(document).find('div#instruccionesOverlay').empty().append(overInstrucciones);
-			//var content_instrucciones = "<div id='leftpanel'><div style='color:white; font-size:20px; margin:28px;'>Selecciona la fecha:</div><div class='styled-select'><select name='select_activacion' id='select_activacion' onchange='cambiarImg()'><option value='img/17_Abril.png'>17 Abril</option><option value='img/18_Abril.png'>18 Abril</option><option value='img/19_Abril.png'>19 Abril</option></select></div></div><div id='rightpanel'><img id='img_activacion' src='img/17_Abril.png' style='width: 92%;'/></div>";
-			//$(document).find('div#over_instr').append(content_instrucciones);
 			$('div#over_instr').fadeIn('medium');
 		})
 
