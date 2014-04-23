@@ -32,6 +32,10 @@
         } else {
             $('#avisoIE').css('visibility', 'hidden');
         }
+
+        $('input#cerrar_avisoIE').on('click', function(){
+            $('#avisoIE').fadeOut(1000);
+        })
     })
     </script>
 </head>
@@ -42,6 +46,8 @@
         <a href="http://www.google.com/intl/es-419/chrome/browser/" target="_blank"><img src="img/chrome.png" /></a>
         <a href="http://support.apple.com/downloads/#safari" target="_blank"><img src="img/safari.png" /></a>
         <a href="http://www.mozilla.org/es-MX/firefox/new/" target="_blank"><img src="img/firefox.png" /></a>
+        <br/>
+        <input type="button" id="cerrar_avisoIE" value="Cerrar"/>
     </div>
 	<div id="container">
         <input type="button" value="" id="takeSnapshot" onclick="tomarFoto()">	

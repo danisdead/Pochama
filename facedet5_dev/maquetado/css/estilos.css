@@ -277,3 +277,14 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 	height:100px;
 	padding: 10px;
 }
+
+#cerrar_avisoIE{
+	font-family: 'Yanone Kaffeesatz', 'sans-serif';
+	font-size: 20px;
+	width:100px;
+	height:30px;
+	border:none;
+	margin: 0 auto;
+	background-color: #00C0AE;
+	color:white;
+}
