@@ -103,7 +103,7 @@ $(document).ready(function(){
 
 		/*Overlay Instrucciones*/
 		var overInstrucciones = $('<div>').attr('id', 'over_instr');
-		overInstrucciones.css({'height' : '500px', 'width' : '705px', 'background' : 'url("img/instrucciones.png") no-repeat', 'position': 'fixed', 'top' : '0px', 'margin' : '4% 0 0 -28%', 'z-index' : '2', 'left' : '50%', 'display' : 'none'});
+		overInstrucciones.css({'height' : '600px', 'width' : '800px', 'background' : 'url("img/instrucciones.png") no-repeat', 'position': 'relative', 'top' : '-900px',  'left' : '0px' ,'z-index' : '2', 'display' : 'none'});
 
 		$('.instr_Overlay').on('click', function(){
 			console.log();
