@@ -104,4 +104,25 @@ $(document).ready(function(){
 			$('#retake').show();
 		})
 
+		/*Overlay Instrucciones*/
+		var overInstrucciones = $('<div>').attr('id', 'over_instr');
+		overInstrucciones.css({'height' : '500px', 'width' : '705px', 'background' : 'url("img/instrucciones.png") no-repeat', 'position': 'fixed', 'top' : '0px', 'margin' : '4% 0 0 -28%', 'z-index' : '2', 'left' : '50%', 'display' : 'none'});
+
+		$('.instr_Overlay').on('click', function(){
+			console.log();
+			$(document).find('div#instruccionesOverlay').empty().append(overInstrucciones);
+			//var content_instrucciones = "<div id='leftpanel'><div style='color:white; font-size:20px; margin:28px;'>Selecciona la fecha:</div><div class='styled-select'><select name='select_activacion' id='select_activacion' onchange='cambiarImg()'><option value='img/17_Abril.png'>17 Abril</option><option value='img/18_Abril.png'>18 Abril</option><option value='img/19_Abril.png'>19 Abril</option></select></div></div><div id='rightpanel'><img id='img_activacion' src='img/17_Abril.png' style='width: 92%;'/></div>";
+			//$(document).find('div#over_instr').append(content_instrucciones);
+			$('div#over_instr').fadeIn('medium');
+		})
+
+		$(document).mouseup(function (e){
+
+		    var cont_act = $("div#over_instr");
+		    if (!cont_act.is(e.target) && cont_act.has(e.target).length === 0){
+		        cont_act.fadeOut('medium').empty();
+		    }
+
+		});
+
 })

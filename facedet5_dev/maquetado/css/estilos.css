@@ -8,6 +8,9 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 	padding: 0px;
 }
 
+body{
+	font-family: 'Yanone Kaffeesatz', 'sans-serif';
+}
 
 #container{
 	width: 800px;
@@ -228,14 +231,15 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 }
 
 #retake{
+	font-family: 'Yanone Kaffeesatz', 'sans-serif';
 	width: 60px;
 	height: 60px;
     position: relative;
-	top: 211px;
-	left: -81px;
+	top: 112px;
+	left: 61px;
     background-color: transparent;
     border: none;
-    font-size: 15px;
+    font-size: 25px;
     color: #820000;
     font-weight: bold;
 }
@@ -287,4 +291,17 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 	margin: 0 auto;
 	background-color: #00C0AE;
 	color:white;
+}
+
+.instr_Overlay{
+	font-family: 'Yanone Kaffeesatz', 'sans-serif';
+	position: relative;
+	border: none; 
+	background-color: transparent;
+	left: 281px;
+	bottom: 175px;
+	color: #820000;
+	height: 55px;
+	width: 55px;
+	font-size: 51px;
 }
