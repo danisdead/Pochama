@@ -4,7 +4,7 @@
 	<title>Takis Cam</title>
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
     <script type="text/javascript" src="js/CamShim.js"></script>
     <script type="text/javascript" src="js/calibrate.js"></script>
@@ -12,7 +12,7 @@
     <script type="text/javascript" src="js/keypad.js" ></script>
     <script type="text/javascript" src="js/sylvester.js" ></script>
     <script type="text/javascript" src="js/cam.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
     <script>
     $(document).ready(function(){
         $("#flash").css('visibility', 'hidden');
@@ -43,9 +43,9 @@
     <div id="avisoIE">
         Para tener una mejor experiencia con esta aplicaci&oacute;n, te sugerimos utilizar un navegador moderno:
         <br/>
-        <a href="http://www.google.com/intl/es-419/chrome/browser/" target="_blank"><img src="img/chrome.png" /></a>
-        <a href="http://support.apple.com/downloads/#safari" target="_blank"><img src="img/safari.png" /></a>
-        <a href="http://www.mozilla.org/es-MX/firefox/new/" target="_blank"><img src="img/firefox.png" /></a>
+        <a href="https://www.google.com/intl/es-419/chrome/browser/" target="_blank"><img src="img/chrome.png" /></a>
+        <a href="https://support.apple.com/downloads/#safari" target="_blank"><img src="img/safari.png" /></a>
+        <a href="https://www.mozilla.org/es-MX/firefox/new/" target="_blank"><img src="img/firefox.png" /></a>
         <br/>
         <input type="button" id="cerrar_avisoIE" value="Cerrar"/>
     </div>
