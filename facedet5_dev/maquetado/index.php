@@ -12,6 +12,7 @@
     <script type="text/javascript" src="js/keypad.js" ></script>
     <script type="text/javascript" src="js/sylvester.js" ></script>
     <script type="text/javascript" src="js/cam.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
     <script>
     $(document).ready(function(){
         $("#flash").css('visibility', 'hidden');
@@ -24,10 +25,24 @@
                 $("#flash").css('visibility', 'hidden');
             });
         })
+
+        /*Muestra u oculta el aviso si el usuario usa Internet Explorer*/
+        if (navigator.appName == 'Microsoft Internet Explorer'){
+            $('#avisoIE').fadeIn(1000);
+        } else {
+            $('#avisoIE').css('visibility', 'hidden');
+        }
     })
     </script>
 </head>
 <body onload="displayCam()">
+    <div id="avisoIE">
+        Para tener una mejor experiencia con esta aplicaci&oacute;n, te sugerimos utilizar un navegador moderno:
+        <br/>
+        <a href="http://www.google.com/intl/es-419/chrome/browser/" target="_blank"><img src="img/chrome.png" /></a>
+        <a href="http://support.apple.com/downloads/#safari" target="_blank"><img src="img/safari.png" /></a>
+        <a href="http://www.mozilla.org/es-MX/firefox/new/" target="_blank"><img src="img/firefox.png" /></a>
+    </div>
 	<div id="container">
         <input type="button" value="" id="takeSnapshot" onclick="tomarFoto()">	
         <div id="object_container">

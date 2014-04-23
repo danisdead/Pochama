@@ -2,56 +2,11 @@
 <html lang="en">
 <head>
     <title>Takis</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script type="text/javascript" src="js/jquery-2.0.0.min.js" ></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-    <script type="text/javascript" src="CamShim.js"></script>
-    <script type="text/javascript" src="calibrate.js"></script>
-    <script type="text/javascript" src="common_utils.js" ></script>
-    <script type="text/javascript" src="keypad.js" ></script>
-    <script type="text/javascript" src="sylvester.js" ></script>
-    <script type="text/javascript" src="js/cam.js" ></script>
-    <script type="text/javascript" src="js/function.js" ></script>
-    <script>
-    $(document).ready(function(){
-        $("#flash").css('visibility', 'hidden');
-        $('.container').on('click', '#takeSnapshot', function() { 
-            $("#flash").fadeIn(500);
-            $("#flash").css('visibility', 'visible');
-            $("#flash").fadeOut(500, function(){
-                $("#flash").css('display', 'block');
-                $("#flash").css('visibility', 'hidden');
-            });
-        })
-    })
-    </script>
+    
 </head>
-<body onload="displayCam()">
-    <div class="container">
-    <div id="camera"></div>
-        <canvas id="canvas" width="373" height="243"></canvas>
-        <canvas id="output" width="373" height="243"></canvas>
-        
-        <img id="imagenie" src="facedet/glasses2.png" alt="The Scream" />
-        <div id="flash"></div>
-        <script src="facedet/ccv.js"></script>
-        <script src="facedet/face.js"></script>
-        <img id="scream" src="facedet/glasses2.png" alt="The Scream" width="120">
-        <script>
-        </script>
-        <div id="controles">
-            <input type="button" class="boton" style="background:url('img/mini1.png');" onclick="cambiarImagen('1')" />
-            <input type="button" class="boton" style="background:url('img/mini2.png');" onclick="cambiarImagen('2')" />
-            <input type="button" class="boton" style="background:url('img/mini3.png');" onclick="cambiarImagen('3')" />
-            <input type="button" class="boton" style="background:url('img/mini4.png');" onclick="cambiarImagen('4')" />
-            <div id="elegida">Elige una imagen</div>
-            <input type="button" value="Foto" id="takeSnapshot" onclick="tomarFoto()">
-            <input type="button" value="Otra vez" id="retake" onclick="otraVez()">
-            <div id='key' style='font-size: 48px; width:100%; padding-left:50%;float:right'>&nbsp;</div>
-        </div>
-
-    </div>
+<body >
+    
+    <iframe src="index.php"/ >
 
 </body>
 </html>

@@ -22,7 +22,10 @@
                 document.getElementById('camera').style.height = height + "px";
                 //mostrar #elcanvas de la camara
                 document.getElementById('canvas').style.visibility = "visible";
+
                 /*document.getElementById('camera').style.visibility = "hidden";*/
+                document.getElementById('camera').style.position = "relative";
+                document.getElementById('camera').style.top = "-50000px"
                 document.getElementById('container').css('margin-top', '-221px');
             } else {
                 alert("You need to give this page camera access.");
