@@ -40,6 +40,18 @@
     </script>
 </head>
 <body onload="displayCam()">
+    <div id="fb-root"></div>
+    <script>
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1&appId=502120643233311";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    
+    </script>
     <div id="avisoIE">
         Para tener una mejor experiencia con esta aplicaci&oacute;n, te sugerimos utilizar un navegador moderno:
         <br/>
@@ -155,6 +167,6 @@ function capture(){
 }
 
 </script>
-
+<div class="fb-share-button" data-href="http://ccdigital.mx/takis-webcam/facedet/glasses2.png" data-type="button"></div>
 </body>
 </html>
