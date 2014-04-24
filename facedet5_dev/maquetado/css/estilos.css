@@ -307,3 +307,10 @@ body{
 	font-size: 51px;
 	cursor:pointer;
 }
+
+.fb-share-button{
+	top: -480px;
+	left: 58px;
+	display:none;
+}
+

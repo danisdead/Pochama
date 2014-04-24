@@ -233,6 +233,7 @@ function drawFixedImageIE(){
 }
 
 function tomarFoto(){
+    $('.fb-share-button').fadeIn(1000);
     var output = document.getElementById('output');
     var ctx = output.getContext("2d");
     var source = document.getElementById('canvas');
@@ -245,10 +246,9 @@ function tomarFoto(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     ctx.drawImage(img, (295, 475, 373 , 243);*/
-
-    
 }
 
 function otraVez(){
     document.getElementById('output').style.visibility = "hidden";
+    $('.fb-share-button').fadeOut(500);
 }
