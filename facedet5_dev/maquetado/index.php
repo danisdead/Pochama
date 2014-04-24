@@ -154,10 +154,10 @@
 function capture(){
     html2canvas(document.body, {
   onrendered: function(canvas) {
-    //document.body.appendChild(canvas);
+    document.body.appendChild(canvas);
 
-    var img = canvas.toDataURL("image/png");
-    window.open(img, "toDataUrl() image", "width=600, height=600");
+   /* var img = canvas.toDataURL("image/png");
+    window.open(img, "toDataUrl() image", "width=600, height=600");*/
 
 
   },
