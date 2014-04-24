@@ -96,7 +96,6 @@
             <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
 		</div>
 		<div id="cam_salsa">
-            
 			<div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -114,7 +113,6 @@
             <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
 		</div>
 		<div id="cam_original">
-            
 			<div class="cont_botones">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -154,18 +152,16 @@
 </script>
 <script type="text/javascript">
 
-
 function capture(){
     html2canvas(document.body, {
-  onrendered: function(canvas) {
-    //document.body.appendChild(canvas);
-
-    var img = canvas.toDataURL("image/png");
-    window.open(img, "toDataUrl() image", "width=600, height=600");
-  },
-  width: 1080,
-  height: 620
-});
+    onrendered: function(canvas) {
+        //document.body.appendChild(canvas);
+        var img = canvas.toDataURL("image/png");
+        window.open(img, "toDataUrl() image", "width=600, height=600");
+    },
+      width: 1080,
+      height: 620
+    });
 
 }
 
