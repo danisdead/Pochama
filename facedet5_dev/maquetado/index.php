@@ -166,6 +166,7 @@ function capture(){
   width: 1080,
   height: 620
 });
+
 }
 
 </script>
