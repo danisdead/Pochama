@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Takis Cam</title>
+    <meta property="og:title" content="Takis Webcam" />
+    <meta property="og:description" content="Comparte tu foto" />
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
@@ -15,6 +17,7 @@
     <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
     <script>
     $(document).ready(function(){
+        $('.fb-share-button').css('display', 'none');
         $("#flash").css('visibility', 'hidden');
         $('.container').on('click', '#takeSnapshot', function() { 
             console.log("click flash");
@@ -140,6 +143,8 @@
         <input type="button" class="instr_Overlay" value="?" >
         <div id="instruccionesOverlay">
         </div>
+        <div class="fb-share-button" data-href="http://ccdigital.mx/takis-webcam/img/1080x620.gif" data-type="button"></div>
+
 	</div>
     <!--<img src="" id="foto_guardar" style="width:100px;height:100px;"/>-->
     <script>
@@ -158,8 +163,6 @@ function capture(){
 
     var img = canvas.toDataURL("image/png");
     window.open(img, "toDataUrl() image", "width=600, height=600");
-
-
   },
   width: 1080,
   height: 620
@@ -167,6 +170,5 @@ function capture(){
 }
 
 </script>
-<div class="fb-share-button" data-href="http://ccdigital.mx/takis-webcam/facedet/glasses2.png" data-type="button"></div>
 </body>
 </html>
