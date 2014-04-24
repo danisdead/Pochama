@@ -153,6 +153,8 @@
         <div class="fb-share-button" data-href="http://ccdigital.mx/takis-webcam/img/1080x620.gif" data-type="button"></div>
         <div id="contenedor_foto_share" style="width: 1000px; height: 800px; background-color: #FFF; position: relative; top: -300px; border: 1px solid #000;"></div>
 	    <input type="hidden" name="img_val" id="img_val" value="" />
+        <canvas id="imgCompleta" width="800" height="600" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.</canvas>
     </div>
     <!--<img src="" id="foto_guardar" style="width:100px;height:100px;"/>-->
     <script>
@@ -170,9 +172,14 @@ function capture(){
      $('#img_val').val(img);
     $('#contenedor_foto_share').html('<img src="'+img+'" width="800px" heigth="600px"/>');
 
-    $.post('gtof.php', {img_val : $('#img_val').val()}, function(data){
+    $.post('gfot.php', {img_val : $('#img_val').val()}, function(data){
         console.log(success);
     })
+    var new_img = new Image();
+    new_img.src = img;
+    var c = document.getElementById('imgCompleta');
+    var ctx = c.getContext("2d");
+    ctx.drawImage(new_img,0,-300,800,874);
 
    /* document.body.appendChild(canvas);*/
 
