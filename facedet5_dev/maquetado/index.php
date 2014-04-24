@@ -35,7 +35,6 @@
         } else {
             $('#avisoIE').css('visibility', 'hidden');
         }
-
         $('input#cerrar_avisoIE').on('click', function(){
             $('#avisoIE').fadeOut(1000);
         })
