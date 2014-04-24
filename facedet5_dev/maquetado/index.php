@@ -45,6 +45,14 @@
     <div id="fb-root"></div>
     <script>
 
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '502120643233311',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
@@ -63,7 +71,7 @@
         <br/>
         <input type="button" id="cerrar_avisoIE" value="Cerrar"/>
     </div>
-	<div id="container">
+	<div id="container" style="height:874px;">
         <input type="button" value="" id="takeSnapshot" onclick="tomarFoto()">	
         <div id="object_container">
             <div id="camera"></div>
@@ -96,6 +104,7 @@
             <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
 		</div>
 		<div id="cam_salsa">
+            
 			<div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -113,6 +122,7 @@
             <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
 		</div>
 		<div id="cam_original">
+            
 			<div class="cont_botones">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -141,8 +151,9 @@
         <div id="instruccionesOverlay">
         </div>
         <div class="fb-share-button" data-href="http://ccdigital.mx/takis-webcam/img/1080x620.gif" data-type="button"></div>
-
-	</div>
+        <div id="contenedor_foto_share" style="width: 1000px; height: 800px; background-color: #FFF; position: relative; top: -300px; border: 1px solid #000;"></div>
+	    <input type="hidden" name="img_val" id="img_val" value="" />
+    </div>
     <!--<img src="" id="foto_guardar" style="width:100px;height:100px;"/>-->
     <script>
     </script>
@@ -153,17 +164,28 @@
 <script type="text/javascript">
 
 function capture(){
-    html2canvas(document.body, {
-    onrendered: function(canvas) {
-        //document.body.appendChild(canvas);
-        var img = canvas.toDataURL("image/png");
-        window.open(img, "toDataUrl() image", "width=600, height=600");
-    },
-      width: 1080,
-      height: 620
-    });
+    html2canvas(document.body.children[3], {
+  onrendered: function(canvas) { 
+    var img = canvas.toDataURL("image/png");
+     $('#img_val').val(img);
+    $('#contenedor_foto_share').html('<img src="'+img+'" width="800px" heigth="600px"/>');
+
+    $.post('gtof.php', {img_val : $('#img_val').val()}, function(data){
+        console.log(success);
+    })
+
+   /* document.body.appendChild(canvas);*/
+
+   
+  //  window.open(img, "toDataUrl() image", "width=600, height=600");
+  },
+  width: 1080,
+  height: 620
+});
 
 }
+
+
 
 </script>
 </body>
