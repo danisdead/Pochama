@@ -170,7 +170,7 @@ function capture(){
      $('#img_val').val(img);
     $('#contenedor_foto_share').html('<img src="'+img+'" width="800px" heigth="600px"/>');
 
-    $.post('gtof.php', {img_val : $('#img_val').val()}, function(data){
+    $.post('gfot.php', {img_val : $('#img_val').val()}, function(data){
         console.log(success);
     })
 
