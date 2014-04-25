@@ -142,8 +142,8 @@
 		</div>
         <canvas id="output" width="373" height="243" ></canvas>
         <div id="fbsharer"></div>
-        <a href="javascript:fbshareCurrentPage()" target="_blank" alt="Share on Facebook" id="fbsharer">Facebook</a>
-        <div class="fb-share-button" data-href="#" data-type="button"></div>
+        <a href="javascript:fbshareCurrentPage()" target="_blank" alt="Compartir en Facebook" id="fbsharer"></a>
+        <!--<div class="fb-share-button" data-href="#" data-type="button"></div>-->
         <img id="imagenie" src="facedet/glasses2.png" alt="The Scream" />
         <div id="flash"></div>
         <script src="facedet/ccv.js"></script>

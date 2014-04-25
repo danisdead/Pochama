@@ -311,8 +311,15 @@ top: -250px;
 
 #fbsharer{
 	position: relative;
-	top: -413px;
-	left: 76px;
+	top: -411px;
+	left: 57px;
+	/*background-color: #4C68A9;*/
+	width:80px;
+	height:20px;
+	background: url(../img/fb.png);
+	background-size: 100%;
+	text-decoration: none;
+	color:white;
 }
 
 .foto_share{
@@ -322,6 +329,7 @@ top: -250px;
 	position: relative; 
 	top: -300px; 
 	border: 1px solid #000;
+
 }
 
 #contenedor_foto_share{
