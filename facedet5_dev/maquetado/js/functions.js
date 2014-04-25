@@ -4,6 +4,10 @@ Archivo de funciones jQuery para los efectos en las cámaras.
 
 $(document).ready(function(){
 
+		$('img.boton').on('mousedown', function(){
+			$('input.instr_Overlay').css('display', 'none');
+		})
+
 		$('input.takis_fuego').on('click', function(){
 			var div = "#";
 			div += $(this).parents().eq(1).attr('id');
