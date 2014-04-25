@@ -176,11 +176,12 @@ function drawFaceIE(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "-442px";
-    document.getElementById('imagenie').style.left = "-124px";
+    document.getElementById('imagenie').style.top = "-641px";
+    document.getElementById('imagenie').style.left = "291px";
     document.getElementById('imagenie').style.width = "178px";
     document.getElementById('imagenie').style.height = "170px";
     document.getElementById('imagenie').src = img.src;
+
 }
 
 function drawBigFaceIE(){
@@ -190,11 +191,12 @@ function drawBigFaceIE(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "-438px";
-    document.getElementById('imagenie').style.left = "-161px";
+    document.getElementById('imagenie').style.top = "-677px";
+    document.getElementById('imagenie').style.left = "254px";
     document.getElementById('imagenie').style.width = "200px";
     document.getElementById('imagenie').style.height = "200px";
     document.getElementById('imagenie').src = img.src;
+
 }
 
 function drawHatIE(){
@@ -204,8 +206,8 @@ function drawHatIE(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "-532px";
-    document.getElementById('imagenie').style.left = "-138px";
+    document.getElementById('imagenie').style.top = "-684px";
+    document.getElementById('imagenie').style.left = "280px";
     document.getElementById('imagenie').style.width = "200px";
     document.getElementById('imagenie').style.height = "130px";
     document.getElementById('imagenie').src = img.src;
@@ -218,8 +220,8 @@ function drawFixedImageIE(){
     var img = new Image();
     img.src = document.getElementById("elegida").innerHTML;
     document.getElementById('imagenie').style.display = "inline";
-    document.getElementById('imagenie').style.top = "-398px";
-    document.getElementById('imagenie').style.left = "-222px";
+    document.getElementById('imagenie').style.top = "-664px";
+    document.getElementById('imagenie').style.left = "186px";
     document.getElementById('imagenie').style.width = "373px";
     document.getElementById('imagenie').style.height = "243px";
     document.getElementById('imagenie').src = img.src;
