@@ -17,7 +17,7 @@
     <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
     <script>
     $(document).ready(function(){
-        $('.fb-share-button').css('display', 'none');
+        //$('.fb-share-button').css('display', 'none');
         $("#flash").css('visibility', 'hidden');
         $('.container').on('click', '#takeSnapshot', function() { 
             console.log("click flash");
@@ -141,7 +141,9 @@
             <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
 		</div>
         <canvas id="output" width="373" height="243" ></canvas>
-        
+        <div id="fbsharer"></div>
+        <a href="javascript:fbshareCurrentPage()" target="_blank" alt="Share on Facebook" id="fbsharer">Facebook</a>
+        <div class="fb-share-button" data-href="#" data-type="button"></div>
         <img id="imagenie" src="facedet/glasses2.png" alt="The Scream" />
         <div id="flash"></div>
         <script src="facedet/ccv.js"></script>
@@ -151,7 +153,6 @@
         <div id="instruccionesOverlay"></div>
         <div id="fotoOverlay"></div>
         <!--<div class="fb-share-button" data-href="#" data-type="button"></div>-->
-        <a id="fbsharer" href="">Holi</a>
         <div id="contenedor_foto_share"></div>
 	    <input type="hidden" name="img_val" id="img_val" value="" />
         <canvas id="imgCompleta" width="800" height="600" style="display:none">
@@ -165,6 +166,7 @@
     <script src="https://d224rrjkj24om2.cloudfront.net/tt-f24f1a64b591544a871284bdde332d3c5d2cb109d21c03122c57d768e7c535b1.js">
 </script>
 <script type="text/javascript">
+var ruta;
 
 function capture(){
     html2canvas(document.body.children[3], {
@@ -184,11 +186,20 @@ function capture(){
    /* document.body.appendChild(canvas);*/
     $.post('gfot.php', {img_val : $('#img_val').val()}, function(data){
         //<div class="fb-share-button" data-href="http://ccdigital.mx/takis-webcam/img/1080x620.gif" data-type="button"></div>
-        var ruta = 'https://www.facebook.com/sharer/sharer.php?app_id=502120643233311&sdk=joey&u=https://www.ccdigital.mx/takis-webcam/img/usr/' + data;
-        console.log(ruta);
-        $('#fbsharer').attr('href', ruta);
-        //$('.fb-share-button').attr('data-href', ruta);
-        //
+        //var ruta = 'https://www.facebook.com/sharer/sharer.php?app_id=502120643233311&sdk=joey&u=https://www.ccdigital.mx/takis-webcam/img/usr/' + data;
+        ruta = 'https://www.ccdigital.mx/takis-webcam/img/usr/' + data;
+        //<div class="fb-share-button" data-href="#" data-type="button"></div>
+        
+        
+
+        //https://www.facebook.com/sharer/sharer.php?app_id=502120643233311&sdk=joey&u=https%3A%2F%2Fccdigital.mx%2Ftakis-webcam%2F&display=popup
+        /*var ruta2 = '/sharer.php?app_id=502120643233311&sdk=joey&u=' + ruta + '&display=popup';
+        $('.fb-share-button').attr('data-href', ruta);
+        $('.pluginShareButtonLink').attr('href', ruta2);
+
+        $('#container').append('<div class="fb-share-button" data-href="' + ruta + '" data-type="button"></div>');*/
+
+
     })
 
   },
@@ -198,7 +209,10 @@ function capture(){
 
 }
 
-
+function fbshareCurrentPage(){
+    window.open("https://www.facebook.com/sharer/sharer.php?u="+ruta+"&t="+document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+            return false;
+    }
 
 </script>
 </body>

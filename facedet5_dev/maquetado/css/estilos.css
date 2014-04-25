@@ -310,8 +310,9 @@ top: -250px;
 }
 
 #fbsharer{
-	top: -480px;
-	left: 58px;
+	position: relative;
+	top: -413px;
+	left: 76px;
 }
 
 .foto_share{
