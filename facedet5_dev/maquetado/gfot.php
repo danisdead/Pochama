@@ -7,4 +7,6 @@ $file_suffix = time();
 
 file_put_contents('img/usr/imagen_'.$file_suffix.'.png', base64_decode($image[1]));
 
+echo "imagen_".$file_suffix.".png";
+
 ?>
