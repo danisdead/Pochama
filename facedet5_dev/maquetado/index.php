@@ -45,13 +45,13 @@
     <div id="fb-root"></div>
     <script>
 
- /*   window.fbAsyncInit = function() {
+    window.fbAsyncInit = function() {
         FB.init({
           appId      : '502120643233311',
           status     : true,
           xfbml      : true
         });
-      };*/
+      };
 
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -150,10 +150,11 @@
         <input type="button" class="instr_Overlay" value="?" >
         <div id="instruccionesOverlay">
         </div>
-        <div class="fb-share-button" data-href="" data-type="button"></div>
+        <div class="fb-share-button" data-href="http://ccdigital.mx/takis-webcam/img/1080x620.gif" data-type="button"></div>
         <div id="contenedor_foto_share" style="width: 1000px; height: 800px; background-color: #FFF; position: relative; top: -300px; border: 1px solid #000;"></div>
 	    <input type="hidden" name="img_val" id="img_val" value="" />
-        <a href="https://www.facebook.com/sharer.php?app_id=502120643233311&sdk=joey&u=http%3A%2F%2Fccdigital.mx%2Ftakis-webcam%2Fimg%2Fusr%2Fimagen_1398381825.png"><button>boton_share</button></a>
+        <canvas id="imgCompleta" width="800" height="600" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.</canvas>
     </div>
     <!--<img src="" id="foto_guardar" style="width:100px;height:100px;"/>-->
     <script>
@@ -172,10 +173,13 @@ function capture(){
     $('#contenedor_foto_share').html('<img src="'+img+'" width="800px" heigth="600px"/>');
 
     $.post('gfot.php', {img_val : $('#img_val').val()}, function(data){
-      //  $(document).find('.pluginShareButtonLink').attr('href', 'https://www.facebook.com/sharer.php?app_id=502120643233311&sdk=joey&u=http%3A%2F%2Fccdigital.mx%2Ftakis-webcam%2Fimg%2Fsrc%2F'+data);
+        console.log(success);
     })
-
-
+    var new_img = new Image();
+    new_img.src = img;
+    var c = document.getElementById('imgCompleta');
+    var ctx = c.getContext("2d");
+    ctx.drawImage(new_img,0,-300,800,874);
 
    /* document.body.appendChild(canvas);*/
 
