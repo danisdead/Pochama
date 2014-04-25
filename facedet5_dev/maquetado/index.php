@@ -62,8 +62,13 @@
     
     </script>
     <div id="avisoIE">
-        Para tener una mejor experiencia con esta aplicaci&oacute;n, te sugerimos utilizar un navegador moderno:
+        
         <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
         <a href="https://www.google.com/intl/es-419/chrome/browser/" target="_blank"><img src="img/chrome.png" /></a>
         <a href="https://support.apple.com/downloads/#safari" target="_blank"><img src="img/safari.png" /></a>
         <a href="https://www.mozilla.org/es-MX/firefox/new/" target="_blank"><img src="img/firefox.png" /></a>
