@@ -112,12 +112,11 @@ $(document).ready(function(){
 		})
 
 		$(document).mouseup(function (e){
-
 		    var cont_act = $("div#over_instr");
 		    if (!cont_act.is(e.target) && cont_act.has(e.target).length === 0){
 		        cont_act.fadeOut('medium').empty();
 		    }
-
 		});
+
 
 })

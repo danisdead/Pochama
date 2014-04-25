@@ -315,3 +315,15 @@ top: -250px;
 	display:none;
 }
 
+.foto_share{
+	width: 800px;
+	height: 800px;
+	background-color: #FFF; 
+	position: relative; 
+	top: -300px; 
+	border: 1px solid #000;
+}
+
+#contenedor_foto_share{
+	display:none;
+}

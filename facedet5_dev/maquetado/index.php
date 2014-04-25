@@ -148,12 +148,12 @@
         <script src="facedet/face.js"></script>
         <div id="elegida">Elige una imagen</div>
         <input type="button" class="instr_Overlay" value="?" >
-        <div id="instruccionesOverlay">
-        </div>
+        <div id="instruccionesOverlay"></div>
+        <div id="fotoOverlay"></div>
         <div class="fb-share-button" data-href="http://ccdigital.mx/takis-webcam/img/1080x620.gif" data-type="button"></div>
-        <div id="contenedor_foto_share" style="width: 1000px; height: 800px; background-color: #FFF; position: relative; top: -300px; border: 1px solid #000;"></div>
+        <div id="contenedor_foto_share"></div>
 	    <input type="hidden" name="img_val" id="img_val" value="" />
-        <canvas id="imgCompleta" width="800" height="600" style="border:1px solid #d3d3d3;">
+        <canvas id="imgCompleta" width="800" height="600" style="display:none">
         Your browser does not support the HTML5 canvas tag.</canvas>
     </div>
     <!--<img src="" id="foto_guardar" style="width:100px;height:100px;"/>-->
@@ -169,22 +169,21 @@ function capture(){
     html2canvas(document.body.children[3], {
   onrendered: function(canvas) { 
     var img = canvas.toDataURL("image/png");
-     $('#img_val').val(img);
-    $('#contenedor_foto_share').html('<img src="'+img+'" width="800px" heigth="600px"/>');
 
+    var new_img_canvas = new Image();
+    new_img_canvas.src = img;
+    var c = document.getElementById('imgCompleta');
+    var ctx = c.getContext("2d");
+    ctx.drawImage(new_img_canvas,0,-300,800,874);
+
+    var new_img = c.toDataURL('image/png');
+    $('#img_val').val(new_img);
+    $('#contenedor_foto_share').html('<img src="' + new_img + '"width="800px" height="600px"/>');
+    
+   /* document.body.appendChild(canvas);*/
     $.post('gfot.php', {img_val : $('#img_val').val()}, function(data){
         console.log(success);
     })
-    var new_img = new Image();
-    new_img.src = img;
-    var c = document.getElementById('imgCompleta');
-    var ctx = c.getContext("2d");
-    ctx.drawImage(new_img,0,-300,800,874);
-
-   /* document.body.appendChild(canvas);*/
-
-   
-  //  window.open(img, "toDataUrl() image", "width=600, height=600");
   },
   width: 1080,
   height: 620
