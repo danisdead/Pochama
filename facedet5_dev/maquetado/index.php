@@ -100,7 +100,7 @@
                 <img id="orig_buenmozo" class="boton" src="img/fuego/sombrero_1.png" width="85px" onclick="cambiarImagen('8')">
                 <img id="orig_charro" class="boton" src="img/fuego/sombrero_2.png" width="85px" onclick="cambiarImagen('9')">
 			</div>
-            <input type="button" value="Repetir" id="retake" onclick="otraVez()" style="">
+            <input type="button" value="" id="retake" onclick="otraVez()" style="">
 		</div>
 		<div id="cam_salsa">
             
