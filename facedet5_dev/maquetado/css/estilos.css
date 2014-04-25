@@ -270,13 +270,14 @@ top: -250px;
 }
 
 #avisoIE{
-	font-family: 'Yanone Kaffeesatz', 'sans-serif';
 	margin:0 auto;
 	text-align: center;
-	font-size: 2em;
 	padding: 10px;
 	display:none;
-	width:800px;
+	width:660px;
+	height: 77px;
+	background: url(../img/aviso_IE.png) no-repeat;
+	margin-bottom: 120px;
 }
 
 #avisoIE img{
