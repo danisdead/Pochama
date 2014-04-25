@@ -309,10 +309,9 @@ top: -250px;
 	cursor:pointer;
 }
 
-.fb-share-button{
+#fbsharer{
 	top: -480px;
 	left: 58px;
-	display:none;
 }
 
 .foto_share{

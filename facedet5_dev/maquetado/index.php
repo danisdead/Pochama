@@ -150,7 +150,8 @@
         <input type="button" class="instr_Overlay" value="?" >
         <div id="instruccionesOverlay"></div>
         <div id="fotoOverlay"></div>
-        <div class="fb-share-button" data-href="http://ccdigital.mx/takis-webcam/img/1080x620.gif" data-type="button"></div>
+        <!--<div class="fb-share-button" data-href="#" data-type="button"></div>-->
+        <a id="fbsharer" href="">Holi</a>
         <div id="contenedor_foto_share"></div>
 	    <input type="hidden" name="img_val" id="img_val" value="" />
         <canvas id="imgCompleta" width="800" height="600" style="display:none">
@@ -182,8 +183,14 @@ function capture(){
     
    /* document.body.appendChild(canvas);*/
     $.post('gfot.php', {img_val : $('#img_val').val()}, function(data){
-        console.log(success);
+        //<div class="fb-share-button" data-href="http://ccdigital.mx/takis-webcam/img/1080x620.gif" data-type="button"></div>
+        var ruta = 'https://www.facebook.com/sharer/sharer.php?app_id=502120643233311&sdk=joey&u=https://www.ccdigital.mx/takis-webcam/img/usr/' + data;
+        console.log(ruta);
+        $('#fbsharer').attr('href', ruta);
+        //$('.fb-share-button').attr('data-href', ruta);
+        //
     })
+
   },
   width: 1080,
   height: 620
