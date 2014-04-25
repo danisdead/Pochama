@@ -17,7 +17,6 @@
     <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
     <script>
     $(document).ready(function(){
-        //$('.fb-share-button').css('display', 'none');
         $("#flash").css('visibility', 'hidden');
         $('.container').on('click', '#takeSnapshot', function() { 
             console.log("click flash");
@@ -152,13 +151,11 @@
         <input type="button" class="instr_Overlay" value="?" >
         <div id="instruccionesOverlay"></div>
         <div id="fotoOverlay"></div>
-        <!--<div class="fb-share-button" data-href="#" data-type="button"></div>-->
         <div id="contenedor_foto_share"></div>
 	    <input type="hidden" name="img_val" id="img_val" value="" />
         <canvas id="imgCompleta" width="800" height="600" style="display:none">
         Your browser does not support the HTML5 canvas tag.</canvas>
     </div>
-    <!--<img src="" id="foto_guardar" style="width:100px;height:100px;"/>-->
     <script>
     </script>
     <script type="text/javascript" src="js/function.js"></script>
@@ -182,24 +179,9 @@ function capture(){
     var new_img = c.toDataURL('image/png');
     $('#img_val').val(new_img);
     $('#contenedor_foto_share').html('<img src="' + new_img + '"width="800px" height="600px"/>');
-    
-   /* document.body.appendChild(canvas);*/
+
     $.post('gfot.php', {img_val : $('#img_val').val()}, function(data){
-        //<div class="fb-share-button" data-href="http://ccdigital.mx/takis-webcam/img/1080x620.gif" data-type="button"></div>
-        //var ruta = 'https://www.facebook.com/sharer/sharer.php?app_id=502120643233311&sdk=joey&u=https://www.ccdigital.mx/takis-webcam/img/usr/' + data;
         ruta = 'https://www.ccdigital.mx/takis-webcam/img/usr/' + data;
-        //<div class="fb-share-button" data-href="#" data-type="button"></div>
-        
-        
-
-        //https://www.facebook.com/sharer/sharer.php?app_id=502120643233311&sdk=joey&u=https%3A%2F%2Fccdigital.mx%2Ftakis-webcam%2F&display=popup
-        /*var ruta2 = '/sharer.php?app_id=502120643233311&sdk=joey&u=' + ruta + '&display=popup';
-        $('.fb-share-button').attr('data-href', ruta);
-        $('.pluginShareButtonLink').attr('href', ruta2);
-
-        $('#container').append('<div class="fb-share-button" data-href="' + ruta + '" data-type="button"></div>');*/
-
-
     })
 
   },
