@@ -103,7 +103,6 @@
             <input type="button" value="" id="retake" onclick="otraVez()" style="">
 		</div>
 		<div id="cam_salsa">
-            
 			<div class="cont_botones_fuego">
 				<input class="takis_fuego" type="button" value="">
 				<input class="takis_salsa" type="button" value="">
@@ -140,7 +139,6 @@
             <input type="button" value="" id="retake" onclick="otraVez()" style="">
 		</div>
         <canvas id="output" width="373" height="243" ></canvas>
-        <div id="fbsharer"></div>
         <a href="javascript:fbshareCurrentPage()" target="_blank" alt="Compartir en Facebook" id="fbsharer"></a>
         <!--<div class="fb-share-button" data-href="#" data-type="button"></div>-->
         <img id="imagenie" src="facedet/glasses2.png" alt="The Scream" />
