@@ -234,7 +234,7 @@ top: -250px;
 
 #retake{
 	font-family: 'Yanone Kaffeesatz', 'sans-serif';
-	width: 60px;
+	width: 65px;
 	height: 60px;
     position: relative;
 	top: 112px;
@@ -244,6 +244,7 @@ top: -250px;
     font-size: 25px;
     color: #820000;
     font-weight: bold;
+    background: url(../img/imagen_repetir.png) no-repeat;
 }
 
 #output{
